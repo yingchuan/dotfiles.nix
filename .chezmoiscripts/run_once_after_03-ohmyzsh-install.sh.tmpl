@@ -34,10 +34,22 @@ clone https://github.com/zsh-users/zsh-syntax-highlighting \
 if command -v zsh >/dev/null 2>&1; then
   if [[ "$(basename "$SHELL")" != "zsh" ]]; then
     echo "Changing default shell to zsh …"
-    if chsh -s "$(command -v zsh)"; then
-      echo "Default shell changed to zsh.  Log out/in to take effect."
+
+    if sudo -n true 2>/dev/null; then
+      # non-interactive sudo is available
+      if sudo chsh -s "$(command -v zsh)" "$USER"; then
+        echo "Default shell changed to zsh (via sudo).  Log out/in to take effect."
+      else
+        echo "WARNING: sudo chsh failed.  Run 'sudo chsh -s $(command -v zsh) \"$USER\"' manually."
+      fi
     else
-      echo "WARNING: chsh failed.  Run 'chsh -s $(command -v zsh)' manually."
+      # fall back to ordinary chsh, which may need a password
+      if chsh -s "$(command -v zsh)"; then
+        echo "Default shell changed to zsh.  Log out/in to take effect."
+      else
+        echo "Cannot change shell automatically (authentication required)."
+        echo "Run 'chsh -s $(command -v zsh)' manually and enter your password."
+      fi
     fi
   else
     echo "Default shell already set to zsh; skipping."
