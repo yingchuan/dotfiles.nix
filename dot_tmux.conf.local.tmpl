@@ -366,7 +366,7 @@ set -g set-clipboard on
 set -g default-terminal "tmux-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
-# 綁 prefix+u，對當前 pane 傳送 unset 指令，並顯示提示
+# Bind prefix+u to unset WAYLAND_DISPLAY in the current pane and show a message
 bind-key u run-shell \
   "tmux send-keys -t '%%' 'unset WAYLAND_DISPLAY' C-m; tmux display-message 'Unset WAYLAND_DISPLAY in this pane'"
 
