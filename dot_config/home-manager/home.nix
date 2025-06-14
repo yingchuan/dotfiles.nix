@@ -26,7 +26,6 @@
     tmux         # terminal multiplexer
     lua          # latest stable (currently 5.4)
     gcc          # GNU C/C++ compiler (gcc + g++)
-    clang        # LLVM/Clang compiler
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
