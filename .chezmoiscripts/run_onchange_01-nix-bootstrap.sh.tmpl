@@ -30,8 +30,8 @@ fi
 # 3. Install Home Manager
 if ! command -v home-manager >/dev/null 2>&1; then
   echo "Installing Home Manager..."
-  # use the same release branch as nixpkgs to avoid version mismatch
-  nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+  # use the same release branch as nixpkgs (25.05) to avoid version mismatch
+  nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
   nix-channel --update
   nix-shell '<home-manager>' -A install
 else
