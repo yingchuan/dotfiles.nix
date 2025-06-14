@@ -30,4 +30,20 @@ clone https://github.com/zsh-users/zsh-autosuggestions \
 clone https://github.com/zsh-users/zsh-syntax-highlighting \
       "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 
+# ── Change login shell to zsh (once) ──────────────────────────────────────────
+if command -v zsh >/dev/null 2>&1; then
+  if [[ "$(basename "$SHELL")" != "zsh" ]]; then
+    echo "Changing default shell to zsh …"
+    if chsh -s "$(command -v zsh)"; then
+      echo "Default shell changed to zsh.  Log out/in to take effect."
+    else
+      echo "WARNING: chsh failed.  Run 'chsh -s $(command -v zsh)' manually."
+    fi
+  else
+    echo "Default shell already set to zsh; skipping."
+  fi
+else
+  echo "zsh not found in PATH; cannot change default shell."
+fi
+
 echo "Oh-My-Zsh bootstrap done."
