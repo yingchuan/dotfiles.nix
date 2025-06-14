@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_DIR="$HOME/.oh-my-tmux"
+
+# clone or update oh-my-tmux
+if [ ! -d "$REPO_DIR" ]; then
+  echo "Cloning oh-my-tmux..."
+  git clone --depth 1 https://github.com/gpakosz/.tmux.git "$REPO_DIR"
+else
+  echo "Updating oh-my-tmux..."
+  git -C "$REPO_DIR" pull --ff-only
+fi
+
+# link main config
+ln -sf "$REPO_DIR/.tmux.conf" "$HOME/.tmux.conf"
