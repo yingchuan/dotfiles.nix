@@ -38,7 +38,7 @@ home-manager switch
 dot_config/
 ├── nixpkgs/
 │   └── home.nix.tmpl                       # package list (Home Manager)
-symlink_dot_config/home-manager             # ~/.config/home-manager → nixpkgs
+dot_config/home-manager.symlink             # ~/.config/home-manager → nixpkgs
 └── nvim/                                   # example program config
     ├── init.lua
     └── lua/…
