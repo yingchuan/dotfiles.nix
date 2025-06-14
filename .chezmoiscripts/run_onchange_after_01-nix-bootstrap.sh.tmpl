@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "====== Nix bootstrap script ======"
+
+# 1. Exit immediately if Nix is already installed
+if command -v nix >/dev/null 2>&1; then
+  echo "Nix already installed, bootstrap script exits."
+  exit 0
+fi
+
+# 2. Install Nix
+echo "Installing Nix..."
+curl -L https://nixos.org/nix/install | sh
+
+# Load Nix into current shell so that subsequent commands work
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+elif [ -f "/etc/profile.d/nix.sh" ]; then
+  . "/etc/profile.d/nix.sh"
+fi
+
+# 2. Enable flakes
+mkdir -p ~/.config/nix
+if ! grep -q "experimental-features.*flakes" ~/.config/nix/nix.conf 2>/dev/null; then
+  echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+  echo "Enabled flakes support."
+fi
+
+# 3. Install Home Manager
+if ! command -v home-manager >/dev/null 2>&1; then
+  echo "Installing Home Manager..."
+  # use the same release branch as nixpkgs (25.05) to avoid version mismatch
+  nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
+else
+  echo "Home Manager already installed, skipping."
+fi
+
+echo "Nix bootstrap completed. You may need to relogin or run 'exec \$SHELL -l' to refresh the environment."
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "====== Nix bootstrap script ======"
+
+# 1. Exit immediately if Nix is already installed
+if command -v nix >/dev/null 2>&1; then
+  echo "Nix already installed, bootstrap script exits."
+  exit 0
+fi
+
+# 2. Install Nix
+echo "Installing Nix..."
+curl -L https://nixos.org/nix/install | sh
+
+# Load Nix into current shell so that subsequent commands work
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+elif [ -f "/etc/profile.d/nix.sh" ]; then
+  . "/etc/profile.d/nix.sh"
+fi
+
+# 2. Enable flakes
+mkdir -p ~/.config/nix
+if ! grep -q "experimental-features.*flakes" ~/.config/nix/nix.conf 2>/dev/null; then
+  echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+  echo "Enabled flakes support."
+fi
+
+# 3. Install Home Manager
+if ! command -v home-manager >/dev/null 2>&1; then
+  echo "Installing Home Manager..."
+  # use the same release branch as nixpkgs (25.05) to avoid version mismatch
+  nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
+else
+  echo "Home Manager already installed, skipping."
+fi
+
+echo "Nix bootstrap completed. You may need to relogin or run 'exec \$SHELL -l' to refresh the environment."
