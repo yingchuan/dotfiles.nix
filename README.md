@@ -15,8 +15,9 @@ sh -c "$(curl -fsLS https://chezmoi.io/get)"
 
 # 2) Clone this repo and apply dotfiles
 chezmoi init <your-github-user>/dotfiles.nix --apply
-#   ↳ runs .chezmoiscripts/run_onchange_01-nix-bootstrap.sh.tmpl
-#     which installs Nix, enables flakes and sets up Home Manager.
+#   ↳ runs:
+#       .chezmoiscripts/run_onchange_01-nix-bootstrap.sh.tmpl  (install Nix + Home Manager)
+#       .chezmoiscripts/run_02-ohmytmux.sh.tmpl               (clone / update oh-my-tmux)
 
 # 3) Reload the shell so that the nix command is available
 exec $SHELL -l
@@ -31,7 +32,8 @@ home-manager switch
 
 ```
 .chezmoiscripts/
-└── run_onchange_01-nix-bootstrap.sh.tmpl   # install Nix + Home Manager
+├── run_onchange_01-nix-bootstrap.sh.tmpl   # install Nix + Home Manager
+└── run_02-ohmytmux.sh.tmpl                 # clone / update oh-my-tmux
 
 dot_config/
 ├── nixpkgs/
@@ -39,6 +41,8 @@ dot_config/
 └── nvim/                                   # example program config
     ├── init.lua
     └── lua/…
+
+dot_tmux.conf.local.tmpl                    # personal tmux overrides
 ```
 
 ---
@@ -47,7 +51,7 @@ dot_config/
 
 | Task                       | Command                                             |
 |----------------------------|-----------------------------------------------------|
-| Edit / add dotfiles        | modify files → `chezmoi apply`                      |
+| Edit / add dotfiles or update oh-my-tmux | modify files → `chezmoi apply` (also pulls latest oh-my-tmux) |
 | Install / update packages  | `home-manager switch`                               |
 | Update channels & packages | `nix-channel --update && home-manager switch`       |
 
