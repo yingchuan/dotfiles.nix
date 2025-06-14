@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+echo "====== Oh-My-Zsh bootstrap ======"
+
+ZSH_DIR="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$ZSH_DIR/custom}"
+
+# ── Install Oh-My-Zsh (unattended, keep any existing ~/.zshrc) ────────────────
+if [[ ! -d "$ZSH_DIR" ]]; then
+  export RUNZSH=no  CHSH=no  KEEP_ZSHRC=yes
+  echo "Installing Oh-My-Zsh …"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  echo "Oh-My-Zsh already present, skipping installer."
+fi
+
+# ── Extra plugins ────────────────────────────────────────────────────────────
+clone() {
+  local repo="$1" dir="$2"
+  if [[ ! -d "$dir" ]]; then
+    git clone --depth 1 "$repo" "$dir"
+  else
+    echo "Plugin $(basename "$dir") already present, skipping."
+  fi
+}
+
+clone https://github.com/zsh-users/zsh-autosuggestions \
+      "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+
+clone https://github.com/zsh-users/zsh-syntax-highlighting \
+      "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+
+echo "Oh-My-Zsh bootstrap done."
