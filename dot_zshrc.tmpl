@@ -1,6 +1,11 @@
 # Oh-My-Zsh base directory
 export ZSH="$HOME/.oh-my-zsh"
 
+# Make Nix commands available in every new shell
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
 # Theme
 ZSH_THEME="bira"
 
