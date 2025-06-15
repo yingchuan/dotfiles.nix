@@ -55,7 +55,6 @@
     # ── language runtimes & managers ────────────────────────────
     ruby         # Ruby interpreter
     julia-bin    # Julia (binary distribution, avoids long compile)
-    pyenv        # Per-user Python version manager
     pipx         # Isolated Python application installer
 
     # ── document / graphics tool-chain ──────────────────────────
