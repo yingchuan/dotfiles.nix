@@ -38,6 +38,7 @@
     cargo        # Rust package manager / build tool
     go           # Go tool-chain
     php          # PHP interpreter (current stable, 8.x)
+    composer     # PHP package manager
     openjdk      # Java Development Kit
     python3Full  # Python 3.x + pip (use pip3)
     zig          # Zig compiler + build system
@@ -68,7 +69,7 @@
     (nodePackages."mermaid-cli")   # mmdc command
 
     # ── database tools ──────────────────────────────────────────
-    sqlite       # sqlite3 CLI
+    sqlite-interactive  # sqlite3 CLI shell
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
