@@ -30,7 +30,12 @@
     tmux         # terminal multiplexer
     lua          # latest stable (currently 5.4)
     gcc          # GNU C/C++ compiler (gcc + g++)
+    clang        # LLVM tool-chain (needed by tree-sitter + some nvim plugins)
     nodejs       # JavaScript/TypeScript runtime (includes npm)
+    gdb          # GNU debugger, needed by nvim-dap cppdbg adapter
+    viu          # terminal image viewer (Sixel/Kitty/iterm2)
+    chafa        # ANSI/Unicode graphics converter
+    ueberzugpp   # image preview helper used by e.g. neovim-image.nvim
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

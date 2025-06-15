@@ -6,6 +6,12 @@ if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
+# Make the OMZ fzf plugin work with Nix-installed fzf
+if command -v fzf >/dev/null 2>&1; then
+  # e.g. /nix/store/…-fzf-0.62.0/bin/fzf → strip the tail
+  export FZF_BASE="$(dirname "$(command -v fzf)")/.."
+fi
+
 # Theme
 ZSH_THEME="bira"
 
