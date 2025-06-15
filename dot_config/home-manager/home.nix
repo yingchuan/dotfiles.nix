@@ -45,6 +45,32 @@
     viu          # terminal image viewer (Sixel/Kitty/iterm2)
     chafa        # ANSI/Unicode graphics converter
     ueberzugpp   # image preview helper used by e.g. neovim-image.nvim
+    nix          # Nix CLI in the user profile (handy in minimal containers)
+    lazygit      # TUI Git client
+    unzip        # ZIP extraction utility
+
+    # ── terminal / GUI helpers ──────────────────────────────────
+    wezterm      # GPU-accelerated terminal emulator
+
+    # ── language runtimes & managers ────────────────────────────
+    ruby         # Ruby interpreter
+    julia-bin    # Julia (binary distribution, avoids long compile)
+    pyenv        # Per-user Python version manager
+    pipx         # Isolated Python application installer
+
+    # ── document / graphics tool-chain ──────────────────────────
+    imagemagick  # 'magick' / 'convert' CLI
+    ghostscript  # 'gs' PDF/PostScript utilities
+    tectonic     # Modern LaTeX engine
+    typst        # Typst typesetting system
+    texliveSmall # provides pdflatex and basic TeX tools
+    (python3Packages.latex2text) # LaTeX → plain-text converter
+
+    # ── diagram generation ──────────────────────────────────────
+    (nodePackages."mermaid-cli")   # mmdc command
+
+    # ── database tools ──────────────────────────────────────────
+    sqlite       # sqlite3 CLI
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
