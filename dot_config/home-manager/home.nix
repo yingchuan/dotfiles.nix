@@ -22,6 +22,10 @@
   # environment.
   home.packages = with pkgs; [
     neovim
+    tree-sitter         # CLI needed by nvim-treesitter to compile parsers
+    fzf                 # fuzzy-finder backend for OMZ + Telescope
+    ripgrep             # live-grep provider
+    fd                  # fast file search used by Telescope/Snacks
     zsh          # shell
     tmux         # terminal multiplexer
     lua          # latest stable (currently 5.4)
