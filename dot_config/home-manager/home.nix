@@ -48,6 +48,7 @@
     ueberzugpp   # image preview helper used by e.g. neovim-image.nvim
     lazygit      # TUI Git client
     unzip        # ZIP extraction utility
+    aider-chat-full   # AI pair-programming CLI (includes Playwright, browser, etc.)
 
     # ── terminal / GUI helpers ──────────────────────────────────
     wezterm      # GPU-accelerated terminal emulator
