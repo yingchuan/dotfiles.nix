@@ -28,7 +28,8 @@
     fd                  # fast file search used by Telescope/Snacks
     zsh          # shell
     tmux         # terminal multiplexer
-    lua          # latest stable (currently 5.4)
+    lua5_1                       # Lua 5.1 interpreter
+    (lua5_1Packages.luarocks)    # LuaRocks package manager built for 5.1
     clang        # LLVM tool-chain (needed by tree-sitter + some nvim plugins)
     nodejs       # JavaScript/TypeScript runtime (includes npm)
     gdb          # GNU debugger, needed by nvim-dap cppdbg adapter
