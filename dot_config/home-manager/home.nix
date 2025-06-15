@@ -63,8 +63,7 @@
     ghostscript  # 'gs' PDF/PostScript utilities
     tectonic     # Modern LaTeX engine
     typst        # Typst typesetting system
-    texliveSmall # provides pdflatex and basic TeX tools
-    (python3Packages.latex2text) # LaTeX → plain-text converter
+    texliveSmall # provides pdflatex, detex, and basic TeX tools
 
     # ── diagram generation ──────────────────────────────────────
     (nodePackages."mermaid-cli")   # mmdc command
