@@ -9,4 +9,5 @@ vim.g.lazyvim_python_lsp = "ruff"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
 vim.g.snacks_animate = false
-vim.g.python3_host_prog = os.getenv("HOME") .. "/.config/nvim/nvim-venv/bin/python3"
+-- Let Neovim pick the first python3 in $PATH (provided by Home-Manager)
+vim.g.python3_host_prog = vim.fn.exepath("python3")
