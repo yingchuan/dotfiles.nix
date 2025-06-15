@@ -69,6 +69,7 @@
     (nodePackages."mermaid-cli")   # mmdc command
 
     # ── database tools ──────────────────────────────────────────
+    sqlite              # shared library libsqlite3.so (needed by Snacks)
     sqlite-interactive  # sqlite3 CLI shell
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
