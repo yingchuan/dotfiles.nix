@@ -45,7 +45,6 @@
     viu          # terminal image viewer (Sixel/Kitty/iterm2)
     chafa        # ANSI/Unicode graphics converter
     ueberzugpp   # image preview helper used by e.g. neovim-image.nvim
-    nix          # Nix CLI in the user profile (handy in minimal containers)
     lazygit      # TUI Git client
     unzip        # ZIP extraction utility
 
