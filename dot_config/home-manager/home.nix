@@ -32,6 +32,15 @@
     (lua51Packages.luarocks)     # LuaRocks package manager built for 5.1
     clang        # LLVM tool-chain (needed by tree-sitter + some nvim plugins)
     nodejs       # JavaScript/TypeScript runtime (includes npm)
+
+    # ── additional language stacks ───────────────────────────────
+    rustc        # Rust compiler
+    cargo        # Rust package manager / build tool
+    go           # Go tool-chain
+    php          # PHP interpreter (current stable, 8.x)
+    openjdk      # Java Development Kit
+    python3Full  # Python 3.x + pip (use pip3)
+    zig          # Zig compiler + build system
     gdb          # GNU debugger, needed by nvim-dap cppdbg adapter
     viu          # terminal image viewer (Sixel/Kitty/iterm2)
     chafa        # ANSI/Unicode graphics converter
