@@ -48,6 +48,7 @@
     ueberzugpp   # image preview helper used by e.g. neovim-image.nvim
     lazygit      # TUI Git client
     unzip        # ZIP extraction utility
+    direnv       # automatic per-directory environment loader
     aider-chat-with-playwright   # AI pair-programming CLI with Playwright support (lighter; no wandb)
 
     # ── terminal / GUI helpers ──────────────────────────────────
