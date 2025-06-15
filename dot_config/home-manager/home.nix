@@ -40,7 +40,7 @@
     php          # PHP interpreter (current stable, 8.x)
     (phpPackages.composer)  # PHP package manager
     openjdk      # Java Development Kit
-    python3Full  # Python 3.x + pip (use pip3)
+    (python3.withPackages (ps: [ ps.pip ]))  # Python 3 with pip module
     zig          # Zig compiler + build system
     gdb          # GNU debugger, needed by nvim-dap cppdbg adapter
     viu          # terminal image viewer (Sixel/Kitty/iterm2)
