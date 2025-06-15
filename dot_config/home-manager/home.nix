@@ -49,6 +49,7 @@
     lazygit      # TUI Git client
     unzip        # ZIP extraction utility
     direnv       # automatic per-directory environment loader
+    age          # modern file-encryption tool (used by chezmoi for secrets)
     aider-chat-with-playwright   # AI pair-programming CLI with Playwright support (lighter; no wandb)
 
     # ── terminal / GUI helpers ──────────────────────────────────
