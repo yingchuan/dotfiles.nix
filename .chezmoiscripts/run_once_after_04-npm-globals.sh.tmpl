@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "====== Installing global npm tools ======"
+
+command -v npm >/dev/null 2>&1 || {
+  echo "npm not found – ensure nodejs is in home.packages"; exit 1; }
+
+npm install --location=global \
+  "@devcontainers/cli" \
+  "@openai/codex" \
+  "@anthropic-ai/claude-code" \
+  "playwright@latest" \
+  "@mermaid-js/mermaid-cli" \
+  "neovim" \
+  "tldr" \
+  "quicktype"
+
+playwright install --with-deps chromium
+
+echo "npm globals installed."

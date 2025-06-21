@@ -71,13 +71,6 @@
     # ── diagram generation ──────────────────────────────────────
     (nodePackages."mermaid-cli")   # mmdc command
 
-    # Additional npm packages (only those that exist in Nixpkgs)
-    nodePackages.playwright
-    nodePackages."@mermaid-js/mermaid-cli"
-
-    # already packaged as regular binaries, not under nodePackages
-    tldr        # community-driven man-pages
-    quicktype   # JSON → code generator
 
     # ── database tools ──────────────────────────────────────────
     sqlite              # shared library libsqlite3.so (needed by Snacks)
