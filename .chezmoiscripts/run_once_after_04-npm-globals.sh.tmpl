@@ -1,21 +1,41 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "====== Installing global npm tools ======"
+echo "== npm global packages (install / upgrade) =="
 
-command -v npm >/dev/null 2>&1 || {
-  echo "npm not found – ensure nodejs is in home.packages"; exit 1; }
+PREFIX="$HOME/.local"          # writable location for global npm installs
+export npm_config_prefix="$PREFIX"
+mkdir -p "$PREFIX"
 
-npm install --location=global \
-  "@devcontainers/cli" \
-  "@openai/codex" \
-  "@anthropic-ai/claude-code" \
-  "playwright@latest" \
-  "@mermaid-js/mermaid-cli" \
-  "neovim" \
-  "tldr" \
+pkgs=(
+  "@devcontainers/cli"
+  "@openai/codex"
+  "@anthropic-ai/claude-code"
+  "playwright@latest"
+  "@mermaid-js/mermaid-cli"
+  "neovim"
+  "tldr"
   "quicktype"
+  "tldr"
+  "quicktype"
+)
 
+install_or_update() {
+  local pkg="$1"
+  if npm list -g --prefix "$PREFIX" --depth=0 "$pkg" >/dev/null 2>&1; then
+    echo "↻ updating $pkg …"
+    npm update -g --prefix "$PREFIX" "$pkg"
+  else
+    echo "➕ installing $pkg …"
+    npm install -g --prefix "$PREFIX" "$pkg"
+  fi
+}
+
+for p in "${pkgs[@]}"; do
+  install_or_update "$p"
+done
+
+# playwright needs its browser once (prefix not required here)
 playwright install --with-deps chromium
 
-echo "npm globals installed."
+echo "npm globals up-to-date."

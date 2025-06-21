@@ -69,7 +69,6 @@
     texliveSmall # provides pdflatex, detex, and basic TeX tools
 
     # ── diagram generation ──────────────────────────────────────
-    (nodePackages."mermaid-cli")   # mmdc command
 
 
     # ── database tools ──────────────────────────────────────────
