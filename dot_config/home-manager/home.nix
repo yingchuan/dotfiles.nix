@@ -72,7 +72,7 @@
     (nodePackages."mermaid-cli")   # mmdc command
 
     # Additional npm packages available directly from Nixpkgs
-    nodePackages.devcontainers-cli
+    nodePackages."devcontainers-cli"
     nodePackages.playwright
     nodePackages."@mermaid-js/mermaid-cli"
     nodePackages.tldr
