@@ -51,7 +51,7 @@
     direnv       # automatic per-directory environment loader
     age          # modern file-encryption tool (used by chezmoi for secrets)
     rbw          # Rust-based Bitwarden CLI (sync + unlock)
-    aider-chat-with-playwright   # AI pair-programming CLI with Playwright support (lighter; no wandb)
+    aider-chat                   # AI pair-programming CLI (Playwright provided by npm script)
 
     # ── terminal / GUI helpers ──────────────────────────────────
     wezterm      # GPU-accelerated terminal emulator
