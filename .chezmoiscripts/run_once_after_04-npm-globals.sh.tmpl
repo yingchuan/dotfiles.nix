@@ -5,6 +5,7 @@ echo "== npm global packages (install / upgrade) =="
 
 PREFIX="$HOME/.local"          # writable location for global npm installs
 export npm_config_prefix="$PREFIX"
+export PATH="$PREFIX/bin:$PATH"   # let the script see newly-installed bins
 mkdir -p "$PREFIX"
 
 pkgs=(
@@ -14,8 +15,6 @@ pkgs=(
   "playwright@latest"
   "@mermaid-js/mermaid-cli"
   "neovim"
-  "tldr"
-  "quicktype"
   "tldr"
   "quicktype"
 )
@@ -36,6 +35,6 @@ for p in "${pkgs[@]}"; do
 done
 
 # playwright needs its browser once (prefix not required here)
-playwright install --with-deps chromium
+"$PREFIX/bin/playwright" install --with-deps chromium
 
 echo "npm globals up-to-date."
