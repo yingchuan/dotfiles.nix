@@ -2,6 +2,9 @@
 set -euo pipefail
 echo "====== Oh-My-Zsh bootstrap ======"
 
+# ensure Nix-profile binaries (zsh) are on PATH for this script
+export PATH="$HOME/.nix-profile/bin:$PATH"
+
 ZSH_DIR="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="${ZSH_CUSTOM:-$ZSH_DIR/custom}"
 
