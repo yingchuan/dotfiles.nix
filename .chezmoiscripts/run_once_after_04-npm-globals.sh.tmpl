@@ -3,6 +3,9 @@ set -euo pipefail
 
 echo "== npm global packages (install / upgrade) =="
 
+# add Nix profile’s bins (node, npm) so the script can call them
+export PATH="$HOME/.nix-profile/bin:$PATH"
+
 PREFIX="$HOME/.local"          # writable location for global npm installs
 export npm_config_prefix="$PREFIX"
 export PATH="$PREFIX/bin:$PATH"   # let the script see newly-installed bins
