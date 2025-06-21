@@ -19,6 +19,7 @@ chezmoi init <your-github-user>/dotfiles.nix --apply
 #       .chezmoiscripts/run_onchange_after_01-nix-bootstrap.sh.tmpl  (install Nix + Home Manager)
 #       .chezmoiscripts/run_02-ohmytmux.sh.tmpl                       (clone / update oh-my-tmux)
 #       .chezmoiscripts/run_once_after_03-ohmyzsh-install.sh.tmpl     (install Oh-My-Zsh)
+#       .chezmoiscripts/run_once_after_04-npm-globals.sh.tmpl         (install / upgrade npm global packages)
 
 # 3) Reload the shell so that the nix command is available
 exec $SHELL -l
