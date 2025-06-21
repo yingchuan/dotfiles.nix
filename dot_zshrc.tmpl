@@ -6,6 +6,11 @@ if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
+# Enable direnv integration (loads .envrc automatically)
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Make the OMZ fzf plugin work with Nix-installed fzf
 if command -v fzf >/dev/null 2>&1; then
   # e.g. /nix/store/…-fzf-0.62.0/bin/fzf → strip the tail
