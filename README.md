@@ -28,6 +28,41 @@ exec $SHELL -l
 home-manager switch
 ```
 
+## Secrets encryption (age)
+
+`chezmoi` keeps private files (e.g. `.envrc`) **encrypted** with
+[age](https://github.com/FiloSottile/age).  
+Set up the key once on every new machine **before** running  
+`chezmoi init --apply` so secrets can be decrypted:
+
+```bash
+# 1) generate or copy an age key
+mkdir -p ~/.config/chezmoi/age
+age-keygen -o ~/.config/chezmoi/age/keys.txt
+
+# 2) tell chezmoi to use age and your public key
+cat > ~/.config/chezmoi/chezmoi.yaml <<'EOF'
+encryption: "age"
+
+age:
+  identities:
+    - "{{ .chezmoi.homeDir }}/.config/chezmoi/age/keys.txt"
+  recipients:
+    # replace with *your* age public key (output of `age-keygen -p`)
+    - age1YOURPUBLICKEYXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+EOF
+```
+
+Working with encrypted files:
+
+```bash
+# add a new secret
+chezmoi add --encrypt ~/.envrc
+
+# edit an existing secret
+chezmoi edit --apply ~/.envrc
+```
+
 ---
 
 ## Repository layout
@@ -36,7 +71,7 @@ home-manager switch
 .chezmoiscripts/
 ├── run_onchange_after_01-nix-bootstrap.sh.tmpl   # install Nix + Home Manager
 ├── run_02-ohmytmux.sh.tmpl                       # clone / update oh-my-tmux
-└── run_once_after_03-ohmyzsh-install.sh.tmpl     # unattended OMZ install
+├── run_once_after_03-ohmyzsh-install.sh.tmpl     # unattended OMZ install
 └── run_once_after_04-npm-globals.sh.tmpl         # install / update npm globals
 
 dot_config/
