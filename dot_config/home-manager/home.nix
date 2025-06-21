@@ -71,56 +71,12 @@
     # ── diagram generation ──────────────────────────────────────
     (nodePackages."mermaid-cli")   # mmdc command
 
-    # Additional npm packages
-    (nodePackages.buildNodePackage {
-      name = "devcontainers-cli";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
-    (nodePackages.buildNodePackage {
-      name = "openai-codex";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/@openai/codex/-/codex-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
-    (nodePackages.buildNodePackage {
-      name = "anthropic-ai-claude-code";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
-    (nodePackages.buildNodePackage {
-      name = "playwright";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/playwright/-/playwright-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
-    (nodePackages.buildNodePackage {
-      name = "neovim";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/neovim/-/neovim-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
-    (nodePackages.buildNodePackage {
-      name = "tldr";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/tldr/-/tldr-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
-    (nodePackages.buildNodePackage {
-      name = "quicktype";
-      src = nodePackages.fetchurl {
-        url = "https://registry.npmjs.org/quicktype/-/quicktype-0.0.0.tgz";
-        sha256 = "sha256-0000000000000000000000000000000000000000000="; # Replace with actual hash
-      };
-    })
+    # Additional npm packages available directly from Nixpkgs
+    nodePackages.devcontainers-cli
+    nodePackages.playwright
+    nodePackages."@mermaid-js/mermaid-cli"
+    nodePackages.tldr
+    nodePackages.quicktype
 
     # ── database tools ──────────────────────────────────────────
     sqlite              # shared library libsqlite3.so (needed by Snacks)
