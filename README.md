@@ -37,6 +37,7 @@ home-manager switch
 ├── run_onchange_after_01-nix-bootstrap.sh.tmpl   # install Nix + Home Manager
 ├── run_02-ohmytmux.sh.tmpl                       # clone / update oh-my-tmux
 └── run_once_after_03-ohmyzsh-install.sh.tmpl     # unattended OMZ install
+└── run_once_after_04-npm-globals.sh.tmpl         # install / update npm globals
 
 dot_config/
 ├── home-manager/

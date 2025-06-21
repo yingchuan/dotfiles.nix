@@ -30,7 +30,6 @@
     tmux         # terminal multiplexer
     lua5_1                       # Lua 5.1 interpreter
     (lua51Packages.luarocks)     # LuaRocks package manager built for 5.1
-    gcc          # GNU C/C++ compiler (gcc + g++)
     clang        # LLVM / Clang tool-chain (clang, clang++)
     nodejs       # JavaScript/TypeScript runtime (includes npm)
 
