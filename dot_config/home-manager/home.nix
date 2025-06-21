@@ -49,6 +49,9 @@
     lazygit      # TUI Git client
     unzip        # ZIP extraction utility
     direnv       # automatic per-directory environment loader
+
+    # ── clipboard helpers for Neovim ─────────────────────────────
+    wl-clipboard  # Wayland clipboard (wl-copy / wl-paste)
     age          # modern file-encryption tool (used by chezmoi for secrets)
     rbw          # Rust-based Bitwarden CLI (sync + unlock)
     aider-chat                   # AI pair-programming CLI (Playwright provided by npm script)
