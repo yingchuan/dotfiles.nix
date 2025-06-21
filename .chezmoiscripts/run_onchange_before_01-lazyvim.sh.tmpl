@@ -12,6 +12,7 @@ if [[ -d "$NVIM_DIR" && -n "$(ls -A "$NVIM_DIR")" ]]; then
 fi
 
 echo "Cloning LazyVim starter template into $NVIM_DIR …"
-git clone --depth 1 https://github.com/LazyVim/starter "$NVIM_DIR"
+git clone https://github.com/LazyVim/starter "$NVIM_DIR"
+rm -rf "$NVIM_DIR/.git"   # strip git history as the LazyVim docs recommend
 
 echo "LazyVim cloned."
