@@ -1,10 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+
+let
+  username = builtins.getEnv "USER";
+  homedir  = builtins.getEnv "HOME";
+in
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "ubuntu";
-  home.homeDirectory = "/home/ubuntu";
+  home.username      = lib.mkDefault username;
+  home.homeDirectory = lib.mkDefault homedir;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
