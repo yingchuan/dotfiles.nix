@@ -152,18 +152,6 @@ in
   };
 
   # Let Home Manager install and manage itself.
-  programs."pre-commit" = {
-    enable   = true;
-    settings.repos = [
-      {
-        repo  = "https://github.com/astral-sh/ruff-pre-commit";
-        rev   = "v0.4.4";             # pin a tag
-        hooks = [
-          { id = "ruff"; args = [ "--fix" ]; }   # lint + auto-format
-        ];
-      }
-    ];
-  };
 
   programs.home-manager.enable = true;
 
