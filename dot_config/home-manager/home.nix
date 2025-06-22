@@ -57,6 +57,9 @@ in
     lazygit      # TUI Git client
     unzip        # ZIP extraction utility
     direnv       # automatic per-directory environment loader
+    uv                  # Rust-based Python package manager
+    ruff                # Python linter / formatter
+    pre-commit          # hook runner
 
     # ── clipboard helpers for Neovim ─────────────────────────────
     wl-clipboard  # Wayland clipboard (wl-copy / wl-paste)
@@ -149,6 +152,19 @@ in
   };
 
   # Let Home Manager install and manage itself.
+  programs.pre-commit = {
+    enable   = true;
+    settings.repos = [
+      {
+        repo  = "https://github.com/astral-sh/ruff-pre-commit";
+        rev   = "v0.4.4";             # pin a tag
+        hooks = [
+          { id = "ruff"; args = [ "--fix" ]; }   # lint + auto-format
+        ];
+      }
+    ];
+  };
+
   programs.home-manager.enable = true;
 
   systemd.user.services.fcitx5 = {
