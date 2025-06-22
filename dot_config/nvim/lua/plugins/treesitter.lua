@@ -27,6 +27,8 @@ return {
           "vue",
           "nix",
         })
+        -- Force use of a C compiler so the -std=c11 flag is accepted
+        require("nvim-treesitter.install").compilers = { "clang", "gcc", "cc" }
       end
     end,
   },
