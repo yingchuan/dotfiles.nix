@@ -1,6 +1,12 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    init = function()
+      -- Force use of a C compiler so the -std=c11 flag is accepted
+      require("nvim-treesitter.install").compilers = { "clang", "gcc", "cc" }
+      -- optional: also pin the environment variable
+      vim.env.CC = "clang"
+    end,
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
         vim.list_extend(opts.ensure_installed, {
@@ -27,8 +33,6 @@ return {
           "vue",
           "nix",
         })
-        -- Force use of a C compiler so the -std=c11 flag is accepted
-        require("nvim-treesitter.install").compilers = { "clang", "gcc", "cc" }
       end
     end,
   },
