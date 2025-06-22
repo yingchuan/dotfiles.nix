@@ -145,7 +145,7 @@ in
   programs.home-manager.enable = true;
 
   # ── Input-method ─────────────────────────────────────────────
-  programs.fcitx5 = {
+  services.fcitx5 = {
     enable = true;                       # start fcitx5 + export env-vars
     addons = with pkgs; [
       fcitx5-chinese-addons              # Pinyin, handwriting, etc.
