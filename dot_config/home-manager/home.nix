@@ -39,6 +39,7 @@ in
     lua5_1                       # Lua 5.1 interpreter
     (lua51Packages.luarocks)     # LuaRocks package manager built for 5.1
     clang        # LLVM / Clang tool-chain (clang, clang++)
+    clang-tools  # provides clang-format, clang-tidy, clangd, …
     nodejs       # JavaScript/TypeScript runtime (includes npm)
 
     # ── additional language stacks ───────────────────────────────
