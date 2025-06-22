@@ -152,7 +152,7 @@ in
   };
 
   # Let Home Manager install and manage itself.
-  programs.pre-commit = {
+  programs."pre-commit" = {
     enable   = true;
     settings.repos = [
       {
