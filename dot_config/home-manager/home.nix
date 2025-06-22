@@ -146,6 +146,11 @@ in
     INPUT_METHOD  = "fcitx5";
   };
 
+  # Expose binaries installed by the Chezmoiscript's npm prefix ($HOME/.local)
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   # Enable direnv + nix-direnv hook
   programs.direnv = {
     enable = true;
