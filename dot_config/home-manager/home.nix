@@ -41,7 +41,6 @@ in
     clang        # LLVM / Clang tool-chain (clang, clang++)
     clang-tools  # provides clang-format, clang-tidy, clangd, …
     nodejs       # JavaScript/TypeScript runtime (includes npm)
-    multipass    # Canonical lightweight VM manager
 
     # ── additional language stacks ───────────────────────────────
     rustc        # Rust compiler
