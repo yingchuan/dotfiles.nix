@@ -143,4 +143,13 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # ── Input-method ─────────────────────────────────────────────
+  services.fcitx5 = {
+    enable = true;                       # start fcitx5 + export env-vars
+    addons = with pkgs; [
+      fcitx5-chinese-addons              # Pinyin, handwriting, etc.
+      fcitx5-chewing                     # Zhuyin/Bopomofo engine
+    ];
+  };
 }
