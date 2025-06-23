@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Installs Docker Engine from the official Ubuntu repo.
+# Chezmoiscripts “run_once_after_*” => executed only the first time.
+
+set -euo pipefail
+
+# Skip everything if Docker is already present
+if command -v docker >/dev/null 2>&1; then
+  echo "Docker already installed – skipping."
+  exit 0
+fi
+
+echo "Removing any old docker packages (ignore failures)…"
+sudo apt-get remove -y docker docker-engine docker.io containerd runc || true
+
+echo "Installing prerequisites…"
+sudo apt-get update -y
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+
+echo "Adding Docker’s official GPG key…"
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+  | sudo tee /etc/apt/keyrings/docker.asc >/dev/null
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo "Adding Docker apt repository…"
+source /etc/os-release
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
+https://download.docker.com/linux/ubuntu ${UBUNTU_CODENAME:-$VERSION_CODENAME} stable" \
+| sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
+echo "Installing Docker Engine…"
+sudo apt-get update -y
+sudo apt-get install -y \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io \
+  docker-buildx-plugin \
+  docker-compose-plugin
+
+echo "Adding $USER to docker group (if not yet)…"
+if ! groups "$USER" | grep -q '\bdocker\b'; then
+  sudo usermod -aG docker "$USER"
+  echo "✓ Added $USER to docker group – log out & back in for it to take effect."
+fi
+
+echo "✓ Docker installation completed."
