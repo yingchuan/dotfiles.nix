@@ -41,8 +41,6 @@ in
     clang        # LLVM / Clang tool-chain (clang, clang++)
     clang-tools  # provides clang-format, clang-tidy, clangd, …
     nodejs       # JavaScript/TypeScript runtime (includes npm)
-    docker       # Docker command-line client
-    docker-compose  # docker-compose v2 (Python version)
 
     # ── additional language stacks ───────────────────────────────
     rustc        # Rust compiler
