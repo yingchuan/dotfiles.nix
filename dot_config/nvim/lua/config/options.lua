@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.g.lazyvim_picker = "snacks"
 vim.g.clipboard = "osc52"
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
 vim.g.lazyvim_python_lsp = "ruff"
