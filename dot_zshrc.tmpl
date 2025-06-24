@@ -37,3 +37,6 @@ zstyle ':omz:plugins:ssh-agent' identities "$HOME/.ssh/yingchuan"
 source "$ZSH/oh-my-zsh.sh"
 
 # --- personal additions below ---------------------------------------------
+# Make npm-global executables (~/.local/bin) available
+export npm_config_prefix="$HOME/.local"
+export PATH="$HOME/.local/bin:$PATH"
