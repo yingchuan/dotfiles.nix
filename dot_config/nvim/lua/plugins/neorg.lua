@@ -15,6 +15,19 @@ return {
               },
             },
           },
+          ["core.keybinds"] = {
+            config = {
+              default_keybinds = false, -- Disable default keybinds to avoid conflicts
+              hook = function(keybinds)
+                -- Define only the keybinds you want, avoiding conflicts
+                keybinds.map("norg", "n", "<C-s>", "<cmd>Neorg keybind norg core.integrations.telescope.find_linkable<CR>")
+                keybinds.map("norg", "n", "<Leader>nn", "<cmd>Neorg workspace notes<CR>")
+                keybinds.map("norg", "n", "<Leader>nc", "<cmd>Neorg toggle-concealer<CR>")
+                
+                -- Add more custom keybinds as needed, avoiding the conflicting ones
+              end,
+            },
+          },
         },
       })
     end,
