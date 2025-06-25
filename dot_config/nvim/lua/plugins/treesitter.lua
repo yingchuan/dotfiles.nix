@@ -30,7 +30,7 @@ return {
           "latex",
           "typst",
           "css",
-          -- "norg", -- Temporarily comment out norg due to compilation issues
+          "norg", -- Re-enable norg parser
           "scss",
           "svelte",
           "vue",
