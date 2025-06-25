@@ -18,7 +18,7 @@
 # Main model:
 
 ## Specify the model to use for the main chat
-model: o3
+model: claude-opus-4-20250514
 
 ########################
 # API Keys and settings:
@@ -105,7 +105,7 @@ architect: true
 #weak-model: xxx
 
 ## Specify the model to use for editor tasks (default depends on --model)
-editor-model: o4-mini
+editor-model: claude-sonnet-4-20250514
 
 ## Specify the edit format for the editor model (default: depends on editor model)
 #editor-edit-format: xxx
