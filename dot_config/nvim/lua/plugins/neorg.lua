@@ -1,13 +1,20 @@
 return {
   {
     "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
+    build = function()
+      -- Skip treesitter installation for norg due to compilation issues
+      -- Neorg will work without syntax highlighting
+    end,
     dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("neorg").setup({
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.concealer"] = {
+            config = {
+              icon_preset = "basic", -- Use basic icons that don't require treesitter
+            },
+          }, -- Adds pretty icons to your documents
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {

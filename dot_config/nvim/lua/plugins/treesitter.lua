@@ -9,6 +9,8 @@ return {
       
       -- Fix for norg parser compilation issues
       require("nvim-treesitter.install").prefer_git = false
+      
+      -- Skip norg parser configuration due to persistent compilation issues
     end,
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
@@ -30,7 +32,7 @@ return {
           "latex",
           "typst",
           "css",
-          "norg", -- Re-enable norg parser
+          -- "norg", -- Disable auto-install due to compilation issues
           "scss",
           "svelte",
           "vue",
