@@ -6,6 +6,9 @@ return {
       require("nvim-treesitter.install").compilers = { "clang", "gcc", "cc" }
       -- optional: also pin the environment variable
       vim.env.CC = "clang"
+      
+      -- Fix for norg parser compilation issues
+      require("nvim-treesitter.install").prefer_git = false
     end,
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
@@ -27,7 +30,7 @@ return {
           "latex",
           "typst",
           "css",
-          "norg",
+          -- "norg", -- Temporarily comment out norg due to compilation issues
           "scss",
           "svelte",
           "vue",
