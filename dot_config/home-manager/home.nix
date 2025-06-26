@@ -162,6 +162,14 @@ in
 
   programs.home-manager.enable = true;
 
+  programs.keychain = {
+    enable = true;               # enable keychain
+    enableBashIntegration = true; # auto-start keychain for Bash
+    enableZshIntegration  = true; # auto-start keychain for Zsh
+    # uncomment the next line to start only ssh-agent:
+    # extraFlags = [ "--agents" "ssh" ];
+  };
+
   systemd.user.services.fcitx5 = {
     Unit = { Description = "Fcitx5 input-method daemon"; };
     Service = {
