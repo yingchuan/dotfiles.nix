@@ -3,6 +3,12 @@
 
 set -euo pipefail
 
+# ── Ensure ~/.local/bin is in PATH (for uv-installed tools) ───────────────
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+# ──────────────────────────────────────────────────────────────────────────
+
 # ── Load Nix environment; ensure ~/.nix-profile/bin is in PATH ──────────────
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
