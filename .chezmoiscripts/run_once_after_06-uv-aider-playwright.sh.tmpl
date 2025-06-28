@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Installs / upgrades aider-chat and playwright via uv for Python-3.12
+
+set -euo pipefail
+
+# safety-check: uv must already be on the PATH
+command -v uv  >/dev/null || { echo "❌  uv is not installed"; exit 1; }
+
+# install / upgrade the two packages into uv’s global toolchain
+uv tool install \
+  --force \
+  --python python3.12 \
+  --with pip \
+  aider-chat@latest \
+  playwright@latest
+
+# optional: pull in browser binaries for playwright
+if command -v playwright >/dev/null; then
+  playwright install --with-deps
+fi
