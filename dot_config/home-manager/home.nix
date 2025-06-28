@@ -35,6 +35,7 @@ in
     ripgrep                  # live-grep provider
     bat                      # modern cat(1) clone with syntax highlighting
     fd                       # fast file search used by Telescope/Snacks
+    tree                     # recursive directory listing utility
     zsh                      # shell
     tmux                     # terminal multiplexer
     lua5_1                   # Lua 5.1 interpreter
