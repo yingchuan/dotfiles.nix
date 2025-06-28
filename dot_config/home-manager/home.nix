@@ -30,17 +30,18 @@ in
     fcitx5
     fcitx5-chinese-addons
     fcitx5-chewing
-    tree-sitter         # CLI needed by nvim-treesitter to compile parsers
-    fzf                 # fuzzy-finder backend for OMZ + Telescope
-    ripgrep             # live-grep provider
-    fd                  # fast file search used by Telescope/Snacks
-    zsh          # shell
-    tmux         # terminal multiplexer
-    lua5_1                       # Lua 5.1 interpreter
-    (lua51Packages.luarocks)     # LuaRocks package manager built for 5.1
-    clang        # LLVM / Clang tool-chain (clang, clang++)
-    clang-tools  # provides clang-format, clang-tidy, clangd, …
-    nodejs       # JavaScript/TypeScript runtime (includes npm)
+    tree-sitter              # CLI needed by nvim-treesitter to compile parsers
+    fzf                      # fuzzy-finder backend for OMZ + Telescope
+    ripgrep                  # live-grep provider
+    bat                      # modern cat(1) clone with syntax highlighting
+    fd                       # fast file search used by Telescope/Snacks
+    zsh                      # shell
+    tmux                     # terminal multiplexer
+    lua5_1                   # Lua 5.1 interpreter
+    (lua51Packages.luarocks) # LuaRocks package manager built for 5.1
+    clang                    # LLVM / Clang tool-chain (clang, clang++)
+    clang-tools              # provides clang-format, clang-tidy, clangd, …
+    nodejs                   # JavaScript/TypeScript runtime (includes npm)
 
     # ── additional language stacks ───────────────────────────────
     rustc        # Rust compiler
