@@ -11,10 +11,9 @@ uv tool install \
   --force \
   --python python3.12 \
   --with pip \
-  aider-chat@latest \
-  playwright@latest
+  aider-chat@latest
 
 # optional: pull in browser binaries for playwright
 if command -v playwright >/dev/null; then
-  playwright install --with-deps
+  playwright install --with-deps chromium
 fi
