@@ -3,6 +3,12 @@
 
 set -euo pipefail
 
+# ── Load Nix environment; ensure ~/.nix-profile/bin is in PATH ──────────────
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+# ─────────────────────────────────────────────────────────────
+
 # safety-check: uv must already be on the PATH
 command -v uv  >/dev/null || { echo "❌  uv is not installed"; exit 1; }
 
