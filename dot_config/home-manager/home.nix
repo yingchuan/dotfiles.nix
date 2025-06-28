@@ -68,8 +68,6 @@ in
     rbw          # Rust-based Bitwarden CLI (sync + unlock)
     aichat                       # AI-powered chat in terminal
 
-    # ── terminal / GUI helpers ──────────────────────────────────
-    wezterm      # GPU-accelerated terminal emulator
 
     # ── language runtimes & managers ────────────────────────────
     ruby         # Ruby interpreter
