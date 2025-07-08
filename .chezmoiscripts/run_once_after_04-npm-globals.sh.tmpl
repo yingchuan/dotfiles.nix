@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "== npm global packages (install / upgrade) =="
+
+# add Nix profile’s bins (node, npm) so the script can call them
+export PATH="$HOME/.nix-profile/bin:$PATH"
+
+PREFIX="$HOME/.local"          # writable location for global npm installs
+export npm_config_prefix="$PREFIX"
+export PATH="$PREFIX/bin:$PATH"   # let the script see newly-installed bins
+mkdir -p "$PREFIX"
+
+pkgs=(
+  "@devcontainers/cli"
+  "@openai/codex"
+  "@anthropic-ai/claude-code"
+  "@mermaid-js/mermaid-cli"
+  "neovim"
+  "tldr"
+  "quicktype"
+)
+
+install_or_update() {
+  local pkg="$1"
+  if npm list -g --prefix "$PREFIX" --depth=0 "$pkg" >/dev/null 2>&1; then
+    echo "↻ updating $pkg …"
+    npm update -g --prefix "$PREFIX" "$pkg"
+  else
+    echo "➕ installing $pkg …"
+    npm install -g --prefix "$PREFIX" "$pkg"
+  fi
+}
+
+for p in "${pkgs[@]}"; do
+  install_or_update "$p"
+done
+
+echo "npm globals up-to-date."

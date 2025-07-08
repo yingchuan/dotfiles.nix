@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+echo "====== Oh-My-Zsh bootstrap ======"
+
+# ensure Nix-profile binaries (zsh) are on PATH for this script
+export PATH="$HOME/.nix-profile/bin:$PATH"
+
+ZSH_DIR="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$ZSH_DIR/custom}"
+
+# ── Install Oh-My-Zsh (unattended, keep any existing ~/.zshrc) ────────────────
+if [[ ! -d "$ZSH_DIR" ]]; then
+  export RUNZSH=no  CHSH=no  KEEP_ZSHRC=yes
+  echo "Installing Oh-My-Zsh …"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  echo "Oh-My-Zsh already present, skipping installer."
+fi
+
+# ── Extra plugins ────────────────────────────────────────────────────────────
+clone() {
+  local repo="$1" dir="$2"
+  if [[ ! -d "$dir" ]]; then
+    git clone --depth 1 "$repo" "$dir"
+  else
+    echo "Plugin $(basename "$dir") already present, skipping."
+  fi
+}
+
+clone https://github.com/zsh-users/zsh-autosuggestions \
+      "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+
+clone https://github.com/zsh-users/zsh-syntax-highlighting \
+      "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+
+# ── Change login shell to zsh (once) ──────────────────────────────────────────
+if command -v zsh >/dev/null 2>&1; then
+  if [[ "$(basename "$SHELL")" != "zsh" ]]; then
+    echo "Changing default shell to zsh …"
+
+    if sudo -n true 2>/dev/null; then
+      # non-interactive sudo is available
+      if sudo chsh -s "$(command -v zsh)" "$USER"; then
+        echo "Default shell changed to zsh (via sudo).  Log out/in to take effect."
+      else
+        echo "WARNING: sudo chsh failed.  Run 'sudo chsh -s $(command -v zsh) \"$USER\"' manually."
+      fi
+    else
+      # fall back to ordinary chsh, which may need a password
+      if chsh -s "$(command -v zsh)"; then
+        echo "Default shell changed to zsh.  Log out/in to take effect."
+      else
+        echo "Cannot change shell automatically (authentication required)."
+        echo "Run 'chsh -s $(command -v zsh)' manually and enter your password."
+      fi
+    fi
+  else
+    echo "Default shell already set to zsh; skipping."
+  fi
+else
+  echo "zsh not found in PATH; cannot change default shell."
+fi
+
+echo "Oh-My-Zsh bootstrap done."

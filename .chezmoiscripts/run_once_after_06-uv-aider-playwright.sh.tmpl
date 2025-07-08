@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Installs / upgrades aider-chat and playwright via uv for Python-3.12
+
+set -euo pipefail
+
+# Skip heavy Python packages during Docker build to avoid disk space issues
+if [ -f /.dockerenv ] || [ -n "${DOCKER_BUILD:-}" ]; then
+  echo "🐳 Skipping aider-chat and playwright installation during Docker build"
+  echo "💡 These can be installed later with:"
+  echo "  uv tool install aider-chat@latest"
+  echo "  uv tool install playwright && playwright install --with-deps chromium"
+  exit 0
+fi
+
+# ── Ensure ~/.local/bin is in PATH (for uv-installed tools) ───────────────
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+# ──────────────────────────────────────────────────────────────────────────
+
+# ── Load Nix environment; ensure ~/.nix-profile/bin is in PATH ──────────────
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+# ─────────────────────────────────────────────────────────────
+
+# safety-check: uv must already be on the PATH
+command -v uv  >/dev/null || { echo "❌  uv is not installed"; exit 1; }
+
+# install / upgrade the two packages into uv’s global toolchain
+uv tool install \
+  --force \
+  --python python3.12 \
+  --with pip \
+  aider-chat@latest
+
+# optional: pull in browser binaries for playwright
+if command -v playwright >/dev/null; then
+  playwright install --with-deps chromium
+fi

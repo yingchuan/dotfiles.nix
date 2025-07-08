@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "====== Nix bootstrap script ======"
+
+# 1. Exit immediately if Nix is already installed
+if command -v nix >/dev/null 2>&1; then
+  echo "Nix already installed, bootstrap script exits."
+  exit 0
+fi
+
+# 2. Install Nix
+echo "Installing Nix..."
+curl -L https://nixos.org/nix/install | sh
+
+# Load Nix into current shell so that subsequent commands work
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+elif [ -f "/etc/profile.d/nix.sh" ]; then
+  . "/etc/profile.d/nix.sh"
+fi
+
+# 2. Enable flakes
+mkdir -p ~/.config/nix
+if ! grep -q "experimental-features.*flakes" ~/.config/nix/nix.conf 2>/dev/null; then
+  echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+  echo "Enabled flakes support."
+fi
+
+# 3. Install Home Manager
+if ! command -v home-manager >/dev/null 2>&1; then
+  echo "Installing Home Manager..."
+  # Source nix environment in main shell context
+  if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  elif [ -f "/etc/profile.d/nix.sh" ]; then
+    . "/etc/profile.d/nix.sh"
+  fi
+  
+  # Verify nix commands are available
+  if ! command -v nix-channel >/dev/null 2>&1; then
+    echo "Error: nix-channel not found even after sourcing environment"
+    echo "PATH: $PATH"
+    echo "NIX_PATH: ${NIX_PATH:-unset}"
+    echo "Available nix files:"
+    ls -la "$HOME/.nix-profile/bin/" 2>/dev/null || echo "No .nix-profile/bin directory"
+    ls -la "$HOME/.nix-profile/etc/profile.d/" 2>/dev/null || echo "No .nix-profile/etc/profile.d directory"
+    
+    # Try direct PATH addition as fallback
+    if [ -d "$HOME/.nix-profile/bin" ]; then
+      echo "Adding Nix to PATH directly"
+      export PATH="$HOME/.nix-profile/bin:$PATH"
+    fi
+    
+    if ! command -v nix-channel >/dev/null 2>&1; then
+      echo "Still can't find nix-channel after direct PATH addition"
+      exit 1
+    fi
+  fi
+  
+  # use the same release branch as nixpkgs (25.05) to avoid version mismatch
+  nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
+else
+  echo "Home Manager already installed, skipping."
+fi
+
+# 4. Build the initial Home-Manager profile and load nix.sh for this run
+echo "Running 'home-manager switch' to build initial profile..."
+home-manager switch
+
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
+echo "Nix bootstrap completed. Environment is ready."

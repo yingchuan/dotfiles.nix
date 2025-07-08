@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "====== LazyVim bootstrap (before phase) ======"
+
+NVIM_DIR="$HOME/.config/nvim"
+
+# Clone only if the directory does not yet contain a config (idempotent)
+if [[ -d "$NVIM_DIR" && -n "$(ls -A "$NVIM_DIR")" ]]; then
+  echo "$NVIM_DIR already populated – skipping LazyVim clone."
+  exit 0
+fi
+
+echo "Cloning LazyVim starter template into $NVIM_DIR …"
+git clone https://github.com/LazyVim/starter "$NVIM_DIR"
+rm -rf "$NVIM_DIR/.git"   # strip git history as the LazyVim docs recommend
+
+echo "LazyVim cloned."

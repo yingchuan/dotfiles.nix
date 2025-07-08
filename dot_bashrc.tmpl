@@ -1,0 +1,14 @@
+# Load Nix profile
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
+# Enable direnv integration
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
+
+# --- personal additions below ------------------------------------------------
+# Make npm-global executables (~/.local/bin) available
+export npm_config_prefix="$HOME/.local"
+export PATH="$HOME/.local/bin:$PATH"
