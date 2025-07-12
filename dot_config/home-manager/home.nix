@@ -59,6 +59,7 @@ in
       pandas 
       numpy 
       ipywidgets 
+      llvmlite 
     ]))  # Python 3 + pip + pynvim + data science packages
     zig          # Zig compiler + build system
     gdb          # GNU debugger, needed by nvim-dap cppdbg adapter
