@@ -31,6 +31,7 @@ in
     fcitx5-chinese-addons
     fcitx5-chewing
     tree-sitter              # CLI needed by nvim-treesitter to compile parsers
+    tree-sitter-grammars.tree-sitter-llvm  # LLVM grammar for tree-sitter
     fzf                      # fuzzy-finder backend for OMZ + Telescope
     ripgrep                  # live-grep provider
     bat                      # modern cat(1) clone with syntax highlighting
@@ -59,7 +60,6 @@ in
       pandas 
       numpy 
       ipywidgets 
-      llvmlite 
     ]))  # Python 3 + pip + pynvim + data science packages
     zig          # Zig compiler + build system
     gdb          # GNU debugger, needed by nvim-dap cppdbg adapter
