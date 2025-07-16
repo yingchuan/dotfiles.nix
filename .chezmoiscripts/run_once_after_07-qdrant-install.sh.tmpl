@@ -1,0 +1,201 @@
+#!/usr/bin/env bash
+# Installs Qdrant vector database binary for Claude RAG system
+# Chezmoiscripts "run_once_after_*" => executed only the first time.
+
+set -euo pipefail
+
+# Skip if Qdrant is already installed
+if command -v qdrant >/dev/null 2>&1; then
+  echo "✅ Qdrant already installed – skipping."
+  exit 0
+fi
+
+# Ensure ~/.local/bin is in PATH and exists
+mkdir -p "$HOME/.local/bin"
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Detect architecture
+ARCH=$(uname -m)
+case $ARCH in
+  x86_64)
+    QDRANT_ARCH="x86_64"
+    ;;
+  aarch64|arm64)
+    QDRANT_ARCH="aarch64"
+    ;;
+  *)
+    echo "❌ Unsupported architecture: $ARCH"
+    exit 1
+    ;;
+esac
+
+# Get latest release info from GitHub
+echo "🔍 Fetching latest Qdrant release info..."
+RELEASE_URL="https://api.github.com/repos/qdrant/qdrant/releases/latest"
+RELEASE_INFO=$(curl -s "$RELEASE_URL")
+VERSION=$(echo "$RELEASE_INFO" | grep '"tag_name"' | cut -d'"' -f4)
+
+if [ -z "$VERSION" ]; then
+  echo "❌ Failed to fetch latest version"
+  exit 1
+fi
+
+echo "📦 Installing Qdrant $VERSION for $QDRANT_ARCH..."
+
+# Download and extract binary
+ARCHIVE_NAME="qdrant-$QDRANT_ARCH-unknown-linux-musl.tar.gz"
+DOWNLOAD_URL="https://github.com/qdrant/qdrant/releases/download/$VERSION/$ARCHIVE_NAME"
+TEMP_DIR="/tmp/qdrant-install"
+TEMP_ARCHIVE="/tmp/qdrant.tar.gz"
+
+echo "⬇️ Downloading from: $DOWNLOAD_URL"
+if ! curl -L -o "$TEMP_ARCHIVE" "$DOWNLOAD_URL"; then
+  echo "❌ Failed to download Qdrant archive"
+  exit 1
+fi
+
+# Extract archive
+mkdir -p "$TEMP_DIR"
+if ! tar -xzf "$TEMP_ARCHIVE" -C "$TEMP_DIR"; then
+  echo "❌ Failed to extract Qdrant archive"
+  exit 1
+fi
+
+# Find and move binary
+if [ -f "$TEMP_DIR/qdrant" ]; then
+  mv "$TEMP_DIR/qdrant" "$HOME/.local/bin/qdrant"
+else
+  # Sometimes the binary is in a subdirectory
+  BINARY_PATH=$(find "$TEMP_DIR" -name "qdrant" -type f | head -1)
+  if [ -n "$BINARY_PATH" ]; then
+    mv "$BINARY_PATH" "$HOME/.local/bin/qdrant"
+  else
+    echo "❌ Could not find qdrant binary in archive"
+    exit 1
+  fi
+fi
+
+# Make executable
+chmod +x "$HOME/.local/bin/qdrant"
+
+# Cleanup
+rm -rf "$TEMP_DIR" "$TEMP_ARCHIVE"
+
+# Create default config directory
+CONFIG_DIR="$HOME/.config/qdrant"
+mkdir -p "$CONFIG_DIR"
+
+# Create basic production config
+cat > "$CONFIG_DIR/config.yaml" << 'EOF'
+debug: false
+log_level: INFO
+
+storage:
+  storage_path: ~/.local/share/qdrant/storage
+  snapshots_path: ~/.local/share/qdrant/snapshots
+  temp_path: ~/.local/share/qdrant/temp
+
+service:
+  host: 0.0.0.0
+  http_port: 6333
+  grpc_port: 6334
+  enable_cors: true
+  enable_tls: false
+  max_request_size_mb: 32
+  max_workers: 0
+
+cluster:
+  enabled: false
+
+telemetry_disabled: true
+EOF
+
+# Create data directories
+mkdir -p "$HOME/.local/share/qdrant/storage"
+mkdir -p "$HOME/.local/share/qdrant/snapshots"
+mkdir -p "$HOME/.local/share/qdrant/temp"
+
+# Create a simple service management script
+cat > "$HOME/.local/bin/qdrant-service" << 'EOF'
+#!/usr/bin/env bash
+# Simple Qdrant service management script
+
+PIDFILE="$HOME/.local/share/qdrant/qdrant.pid"
+LOGFILE="$HOME/.local/share/qdrant/qdrant.log"
+CONFIG="$HOME/.config/qdrant/config.yaml"
+
+case "$1" in
+  start)
+    if [ -f "$PIDFILE" ] && kill -0 $(cat "$PIDFILE") 2>/dev/null; then
+      echo "Qdrant is already running"
+      exit 1
+    fi
+    echo "Starting Qdrant..."
+    nohup qdrant --config-path "$CONFIG" > "$LOGFILE" 2>&1 &
+    echo $! > "$PIDFILE"
+    echo "Qdrant started (PID: $(cat "$PIDFILE"))"
+    ;;
+  stop)
+    if [ -f "$PIDFILE" ]; then
+      PID=$(cat "$PIDFILE")
+      if kill -0 "$PID" 2>/dev/null; then
+        kill "$PID"
+        rm -f "$PIDFILE"
+        echo "Qdrant stopped"
+      else
+        echo "Qdrant is not running"
+        rm -f "$PIDFILE"
+      fi
+    else
+      echo "Qdrant is not running"
+    fi
+    ;;
+  status)
+    if [ -f "$PIDFILE" ] && kill -0 $(cat "$PIDFILE") 2>/dev/null; then
+      echo "Qdrant is running (PID: $(cat "$PIDFILE"))"
+    else
+      echo "Qdrant is not running"
+    fi
+    ;;
+  restart)
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|status|restart}"
+    exit 1
+    ;;
+esac
+EOF
+
+chmod +x "$HOME/.local/bin/qdrant-service"
+
+# Verify installation
+if qdrant --version >/dev/null 2>&1; then
+  echo "✅ Qdrant installation completed successfully!"
+  echo "📋 Installation Details:"
+  echo "   • Version: $(qdrant --version)"
+  echo "   • Binary: $HOME/.local/bin/qdrant"
+  echo "   • Config: $HOME/.config/qdrant/config.yaml"
+  echo "   • Data: $HOME/.local/share/qdrant/"
+  echo ""
+  echo "🔧 Usage:"
+  echo "   • Start service: qdrant-service start"
+  echo "   • Stop service: qdrant-service stop"
+  echo "   • Check status: qdrant-service status"
+  echo "   • Direct run: qdrant --config-path ~/.config/qdrant/config.yaml"
+  echo ""
+  echo "🌐 Access:"
+  echo "   • REST API: http://localhost:6333"
+  echo "   • gRPC API: http://localhost:6334"
+  echo "   • Web Dashboard: http://localhost:6333/dashboard"
+  echo ""
+  echo "🐍 Python Client:"
+  echo "   pip install qdrant-client"
+else
+  echo "❌ Qdrant installation failed"
+  exit 1
+fi
