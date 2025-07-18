@@ -45,7 +45,7 @@ fi
 echo "📦 Installing Qdrant $VERSION for $QDRANT_ARCH..."
 
 # Download and extract binary
-ARCHIVE_NAME="qdrant-$QDRANT_ARCH-unknown-linux-musl.tar.gz"
+ARCHIVE_NAME="qdrant-$QDRANT_ARCH-unknown-linux-gnu.tar.gz"
 DOWNLOAD_URL="https://github.com/qdrant/qdrant/releases/download/$VERSION/$ARCHIVE_NAME"
 TEMP_DIR="/tmp/qdrant-install"
 TEMP_ARCHIVE="/tmp/qdrant.tar.gz"
