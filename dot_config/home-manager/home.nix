@@ -72,6 +72,7 @@ in
     chafa        # ANSI/Unicode graphics converter
     ueberzugpp   # image preview helper used by e.g. neovim-image.nvim
     lazygit      # TUI Git client
+    htop         # interactive process viewer
     unzip        # ZIP extraction utility
     direnv       # automatic per-directory environment loader
     uv                  # Rust-based Python package manager
