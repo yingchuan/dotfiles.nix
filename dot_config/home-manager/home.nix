@@ -43,6 +43,7 @@ in
     (lua51Packages.luarocks) # LuaRocks package manager built for 5.1
     clang                    # LLVM / Clang tool-chain (clang, clang++)
     clang-tools              # provides clang-format, clang-tidy, clangd, …
+    cmake                    # cross-platform build system generator
     autoconf                 # GNU autoconf for generating configure scripts
     nodejs                   # JavaScript/TypeScript runtime (includes npm)
 
