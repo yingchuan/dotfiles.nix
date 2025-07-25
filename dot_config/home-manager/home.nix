@@ -44,6 +44,9 @@ in
     clang                    # LLVM / Clang tool-chain (clang, clang++)
     clang-tools              # provides clang-format, clang-tidy, clangd, …
     cmake                    # cross-platform build system generator
+    zlib                     # compression library
+    ncurses                  # terminal control library (provides tinfo)
+    libxml2                  # XML parsing library
     autoconf                 # GNU autoconf for generating configure scripts
     nodejs                   # JavaScript/TypeScript runtime (includes npm)
 
