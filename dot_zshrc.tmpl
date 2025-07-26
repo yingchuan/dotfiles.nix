@@ -36,3 +36,8 @@ source "$ZSH/oh-my-zsh.sh"
 # Make npm-global executables (~/.local/bin) available
 export npm_config_prefix="$HOME/.local"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Claude Code default model
+export ANTHROPIC_MODEL="claude-sonnet-4-20250514"
+
+alias claude="/home/richardchen/.claude/local/claude"

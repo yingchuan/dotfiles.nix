@@ -370,14 +370,26 @@ set -ga terminal-overrides ",xterm-256color:Tc"
 bind-key u run-shell \
   "tmux send-keys -t '%%' 'unset WAYLAND_DISPLAY' C-m; tmux display-message 'Unset WAYLAND_DISPLAY in this pane'"
 
-# -- codex ---------------------------------------------------------------------
-bind-key | run-shell " \
-    pane=\$(tmux split-window -h -p 25 \
-             -c '#{pane_current_path}' \
-             -P -F '#{pane_id}' \
-             codex); \
-    tmux select-pane -t \$pane; \
-"
+# -- Claude 專業分工快捷鍵配置 ----------------------------------------------------
+
+# 角色切換快捷鍵 (Prefix + 角色字母) - 直接啟動 Claude
+bind-key A new-window -n "analysis" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=analysis && claude" Enter
+bind-key O new-window -n "ops" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=ops && claude" Enter  
+bind-key T new-window -n "tech-dev" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=tech-dev && claude" Enter
+bind-key D new-window -n "docs" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=docs && claude" Enter
+bind-key V new-window -n "devops" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=devops && claude" Enter
+
+# 快速目錄導航 (Prefix + Shift + 字母)
+bind-key J new-window -n "journals" -c "$HOME/notes.aicomp" \; send-keys "nvim journals-recent.md" Enter
+bind-key K new-window -n "knowledge" -c "$HOME/notes.aicomp/knowledge-base" \; send-keys "ls -la" Enter
+bind-key S new-window -n "source" -c "$HOME/notes.aicomp/source" \; send-keys "ls -la" Enter
+bind-key E new-window -n "experiments" -c "$HOME/notes.aicomp/experiments" \; send-keys "ls -la" Enter
+
+# 文檔類別快捷鍵 (Prefix + 數字)
+bind-key 1 new-window -n "architecture" -c "$HOME/notes.aicomp/docs/architecture" \; send-keys "ls -la" Enter
+bind-key 2 new-window -n "analysis-docs" -c "$HOME/notes.aicomp/docs/analysis" \; send-keys "ls -la" Enter  
+bind-key 3 new-window -n "guides" -c "$HOME/notes.aicomp/docs/guides" \; send-keys "ls -la" Enter
+bind-key 4 new-window -n "specs" -c "$HOME/notes.aicomp/docs/specifications" \; send-keys "ls -la" Enter
 
 # -- claude ---------------------------------------------------------------------
 bind-key \\ run-shell " \

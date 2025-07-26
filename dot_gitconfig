@@ -1,3 +1,5 @@
 [user]
 	name = Richard Chen
 	email = yingchuan.chen.2007@gmail.com
+[init]
+	defaultBranch = main
