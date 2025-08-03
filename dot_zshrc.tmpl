@@ -32,6 +32,11 @@ plugins=(
 # Load Oh-My-Zsh
 source "$ZSH/oh-my-zsh.sh"
 
+# fcitx5 input method configuration
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+
 # --- personal additions below ---------------------------------------------
 # Make npm-global executables (~/.local/bin) available
 export npm_config_prefix="$HOME/.local"

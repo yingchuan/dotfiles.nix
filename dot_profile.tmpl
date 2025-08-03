@@ -3,3 +3,8 @@ if command -v keychain >/dev/null 2>&1; then
   # Only SSH agent; preload the two private keys
   eval "$(keychain --eval --agents ssh yingchaun gitlab.kneron)"
 fi
+
+# ── fcitx5 input method configuration ──────────────────────────
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
