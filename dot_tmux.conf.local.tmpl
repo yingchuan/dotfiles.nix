@@ -372,12 +372,19 @@ bind-key u run-shell \
 
 # -- Claude 專業分工快捷鍵配置 ----------------------------------------------------
 
-# 角色切換快捷鍵 (Prefix + 角色字母) - 直接啟動 Claude
+# 主要角色切換快捷鍵 (Prefix + 角色字母) - 直接啟動 Claude
 bind-key A new-window -n "analysis" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=analysis && claude" Enter
 bind-key O new-window -n "ops" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=ops && claude" Enter  
 bind-key T new-window -n "tech-dev" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=tech-dev && claude" Enter
 bind-key D new-window -n "docs" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=docs && claude" Enter
 bind-key V new-window -n "devops" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=devops && claude" Enter
+
+# Code-Reviewer 專業角色快捷鍵 (Prefix + 未佔用字母) - 避免衝突
+bind-key R new-window -n "analysis-review" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=analysis-reviewer && claude" Enter
+bind-key C new-window -n "core-review" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=core-reviewer && claude" Enter
+bind-key I new-window -n "infra-review" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=infrastructure-reviewer && claude" Enter
+bind-key M new-window -n "docs-review" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=documentation-reviewer && claude" Enter
+bind-key N new-window -n "knowledge-review" -c "$HOME/notes.aicomp" \; send-keys "export CLAUDE_ROLE=knowledge-reviewer && claude" Enter
 
 # 快速目錄導航 (Prefix + Shift + 字母)
 bind-key J new-window -n "journals" -c "$HOME/notes.aicomp" \; send-keys "nvim journals-recent.md" Enter
