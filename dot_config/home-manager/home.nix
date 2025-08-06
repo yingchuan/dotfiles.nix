@@ -84,6 +84,16 @@ in
     age          # modern file-encryption tool (used by chezmoi for secrets)
     rbw          # Rust-based Bitwarden CLI (sync + unlock)
     aichat                       # AI-powered chat in terminal
+    
+    # ── Samba 客戶端工具 ───────────────────────────────────────────
+    cifs-utils      # mount.cifs, umount.cifs
+    samba          # smbclient, smbget, smbtar
+    chezmoi        # dotfiles manager
+    
+    # ── 調試工具 ──────────────────────────────────────────────────
+    nmap           # 網路掃描
+    tcpdump        # 封包分析
+    wireshark-cli  # tshark 命令行版
 
 
     # ── language runtimes & managers ────────────────────────────
