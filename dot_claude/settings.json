@@ -1,0 +1,12 @@
+{
+  "model": "sonnet",
+  "hooks": {
+    "PreToolUse": {
+      "Read": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Read || true",
+      "Edit": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Edit || true",
+      "Write": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Write || true", 
+      "Bash": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Bash || true",
+      "Glob": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Glob || true"
+    }
+  }
+}
