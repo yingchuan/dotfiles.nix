@@ -1,13 +1,27 @@
 {
   "model": "sonnet",
   "hooks": {
-    "PreConversation": "[ -f ~/notes.aicomp/config/mandatory_onboard.py ] && python ~/notes.aicomp/config/mandatory_onboard.py || true",
-    "PreToolUse": {
-      "Read": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Read || true",
-      "Edit": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Edit || true",
-      "Write": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Write || true", 
-      "Bash": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Bash || true",
-      "Glob": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Glob || true"
-    }
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command", 
+            "command": "[ -f ~/notes.aicomp/config/mandatory_onboard.py ] && python ~/notes.aicomp/config/mandatory_onboard.py || echo 'Onboard script not found, skipping...'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py || true"
+          }
+        ]
+      }
+    ]
   }
 }
