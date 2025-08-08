@@ -1,6 +1,7 @@
 {
   "model": "sonnet",
   "hooks": {
+    "PreConversation": "[ -f ~/notes.aicomp/config/mandatory_onboard.py ] && python ~/notes.aicomp/config/mandatory_onboard.py || true",
     "PreToolUse": {
       "Read": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Read || true",
       "Edit": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py Edit || true",
