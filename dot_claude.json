@@ -1,0 +1,1095 @@
+{
+  "numStartups": 44,
+  "installMethod": "local",
+  "autoUpdates": true,
+  "customApiKeyResponses": {
+    "approved": [],
+    "rejected": [
+      "P7wRfg9PjoA-MNwdvAAA"
+    ]
+  },
+  "tipsHistory": {
+    "new-user-warmup": 1,
+    "memory-command": 38,
+    "theme-command": 8,
+    "prompt-queue": 42,
+    "enter-to-steer-in-relatime": 10,
+    "todo-list": 11,
+    "# for memory": 34,
+    "install-github-app": 35,
+    "permissions": 36,
+    "drag-and-drop-images": 37,
+    "double-esc": 39,
+    "continue": 40,
+    "custom-commands": 18,
+    "shift-tab": 41,
+    "custom-agents": 21
+  },
+  "promptQueueUseCount": 2,
+  "firstStartTime": "2025-08-03T15:24:44.886Z",
+  "userID": "ea68d51706a6fe2145675c0b66b153cda12115c49c02faf88b83e0af93c04224",
+  "projects": {
+    "/home/richardchen/.local/bin": {
+      "allowedTools": [],
+      "history": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false
+    },
+    "/home/richardchen/notes.aicomp": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": "你問它1+1=?",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude mcp list",
+          "pastedContents": {}
+        },
+        {
+          "display": "它不是筆記管理工具 是mcp server",
+          "pastedContents": {}
+        },
+        {
+          "display": "你問它1+1=?",
+          "pastedContents": {}
+        },
+        {
+          "display": "你可以使用openai_mcp_server嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "max plan opus 只做管理者 會不會也是一下就爆掉了",
+          "pastedContents": {}
+        },
+        {
+          "display": "如果讓opus當ops 操作sonnet會不會好些？",
+          "pastedContents": {}
+        },
+        {
+          "display": "我認為你sonnet 太笨 試過太多種方式 都不行",
+          "pastedContents": {}
+        },
+        {
+          "display": "你知道嗎 這是之前跟你上一任claude討論的結論 結果你現在不清楚  問題在那？",
+          "pastedContents": {}
+        },
+        {
+          "display": "CLOUDE_ROLE是你 ops..  ONBOARD_SHOW_ROLE 是你的下屬 mandatory_onboard.py 是給你下屬看的 那你換掉CLOUDE_ROLE 變成docs是不是一個bug?",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認 mandatory_onboard.py 的實做",
+          "pastedContents": {}
+        },
+        {
+          "display": "你現在是ops 你更換角色後 你又是誰？",
+          "pastedContents": {}
+        },
+        {
+          "display": "一切為了mandatory_onboard.py嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "問一下 tmux rename-window \"docs\" && export CLAUDE_ROLE=docs && echo \"📝 確認身份: Docs Claude - 文檔管理員\"  為啥要這樣",
+          "pastedContents": {}
+        },
+        {
+          "display": "docs 是否有更新到位",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "哪裡出錯了 如果一開始要做對 該怎做",
+          "pastedContents": {}
+        },
+        {
+          "display": "你是ops 是主管 你剛剛是否搶了docs的工作",
+          "pastedContents": {}
+        },
+        {
+          "display": "docs 是否有更新到位",
+          "pastedContents": {}
+        },
+        {
+          "display": "總結一個禮拜發生的事情",
+          "pastedContents": {}
+        },
+        {
+          "display": "當我教你讓docs工作 因為你是第一線主管 你應該subagent docs   這應該是基本強制必知",
+          "pastedContents": {}
+        },
+        {
+          "display": "你是ops",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "讓docs 更新狀態",
+          "pastedContents": {}
+        },
+        {
+          "display": "你有被強制執行或要求嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "~/.claude/settings.json",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude hooks沒執行",
+          "pastedContents": {}
+        },
+        {
+          "display": "你有被強制執行或要求嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "pull",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "讓docs commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "不用了 下件事",
+          "pastedContents": {}
+        },
+        {
+          "display": "讀.tmux.conf.local",
+          "pastedContents": {}
+        },
+        {
+          "display": "我是透過ohmytmux ",
+          "pastedContents": {}
+        },
+        {
+          "display": "接下來勒",
+          "pastedContents": {}
+        },
+        {
+          "display": "要",
+          "pastedContents": {}
+        },
+        {
+          "display": "文件根目錄 文檔好像多且雜",
+          "pastedContents": {}
+        },
+        {
+          "display": "讓docs commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "你是否可以subagent docs 讓它執行",
+          "pastedContents": {}
+        },
+        {
+          "display": "檢視文件系統 提出改進建議",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "有或沒有 回答就好",
+          "pastedContents": {}
+        },
+        {
+          "display": "tmux config 有更動嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "● ✅ 永久記憶已更新完成！\n\n  現在請 Docs Claude 進行歸檔工作。以下是建議的歸檔重點：\n\n  📋 建議 Docs Claude 歸檔內容\n\n  🎯 主要成就\n\n  - 重大架構突破: 完成統一 10角色 Subagent + tmux 雙模式架構\n  - 專業化深度: 每個角色都有完整的專業標準和自動化協作協議\n  - 技術創新: Tech-Dev 與 Core-Reviewer Critical Bug 修復自動化流程\n\n  📁 新增檔案清單\n\n  - .claude/core-reviewer.md - NVPU 編譯器核心審查專家\n  - .claude/analysis.md - 技術分析與架構調查專家\n  - .claude/ops.md - 知識整理與組織架構專家\n  - .claude/tech-dev.md - 技術開發與實現專家\n  - .claude/docs.md - 文檔管理與狀態追蹤專家\n  - .claude/devops.md - 環境配置與系統管理專家\n  - .claude/analysis-reviewer.md - LLVM IR 分析審查專家\n\n  🔄 當前專案狀態\n\n  - 已完成: 統一 Subagent 架構和基礎文件創建\n  - 待完成: 整合現有 onboarding 協議、tmux 一致性、Hook 系統更新、系統驗證\n\n  請 Docs Claude 將這些資訊整合到 journals-recent.md 並同步到永久記憶系統！\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "更新永久記憶 我讓docs歸檔",
+          "pastedContents": {}
+        },
+        {
+          "display": "好的 期待中",
+          "pastedContents": {}
+        },
+        {
+          "display": "很好 不過角色已經有擴增 reviewer 角色 如果存在文檔沒有資訊 這又是一個docs失職",
+          "pastedContents": {}
+        },
+        {
+          "display": "是否可以思考針對所有角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "需要你整合現在的onboarding協定 讓subagemnt 跟 tmux通吃",
+          "pastedContents": {}
+        },
+        {
+          "display": "上網確認 避免錯誤",
+          "pastedContents": {}
+        },
+        {
+          "display": "subagent 的設定在那",
+          "pastedContents": {}
+        },
+        {
+          "display": "subagent",
+          "pastedContents": {}
+        },
+        {
+          "display": "● ✅ 永久記憶已更新完成！\n\n  📋 已同步到永久記憶的關鍵信息\n\n  🚀 核心成就記錄\n\n  - 完成 Tech-Dev & Core-Reviewer 協作系統自動化升級\n  - 從手動角色切換升級為 Task tool 自動化 Subagent 模式\n  - 解決上下文不足和專業度降低問題\n\n  🎯 技術創新點\n\n  - 5個標準交接文檔包 確保完整技術脈絡傳遞\n  - 零手動干預 的強制審查流程\n  - 自動化迭代機制 直到審查通過\n\n  📄 更新文檔記錄\n\n  - 更新了 3個核心協議文檔\n  - 建立了完整的自動化協作標準\n  - 確保無法跳過審查流程的強制執行\n\n  ---\n  準備好交給 Docs Claude 歸檔！\n\n  Docs Claude 可以：\n  1. 📚 歸檔今日完整工作成果\n  2. 📝 更新 journals-recent.md\n  3. 🔄 同步項目狀態文檔\n  4. 🗂️ 整理交叉引用關係\n\n  所有工作已就緒，等待 Docs Claude 接手歸檔流程！ 🎉\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "更新永久記憶 我讓docs歸檔",
+          "pastedContents": {}
+        },
+        {
+          "display": "好 自動",
+          "pastedContents": {}
+        },
+        {
+          "display": "自動化嗎 還是需要我subagent?",
+          "pastedContents": {}
+        },
+        {
+          "display": "理解 但上下文夠嗎 會不會專業度降低",
+          "pastedContents": {}
+        },
+        {
+          "display": "tech-dev and core-reviewer 關係是透過subagent合作嗎 還是tmux ?",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "● ✅ Ops Claude 工作報告已完成！\n\n  📋 報告摘要\n\n  🎯 核心成就\n\n  完整解決 Critical Bug 修復流程缺失問題，建立了工程級別的品質保證系統。\n\n  📊 工作成果\n\n  - 6個核心交付物 - 從協議到工具的完整解決方案\n  - 669行自動化代碼 - 完整的審查工具集\n  - 15,000字專業文檔 - 詳細的標準和流程\n  - 5階段強制流程 - Tech-Dev → Core-Reviewer 協作機制\n\n  🚀 創新亮點\n\n  1. 分級審查系統 - 3層審查深度標準\n  2. 自動化工具集 - Shell 腳本完整解決方案\n  3. Hook 智能提醒 - 防止協議遺忘的機制\n  4. 狀態驅動流程 - 透明的進度追蹤\n\n  💡 解決的核心問題\n\n  - ❌ 以前: Tech-Dev 僅憑 pytest 通過就宣稱修復成功\n  - ✅ 現在: 強制 Core-Reviewer 實際系統驗證 + 多重檢查點\n\n  📄 報告位置\n\n  ops-2025-08-07-tech-dev-core-reviewer-collaboration-system.md\n\n  永久記憶已更新，準備交給 Docs Claude 歸檔！ 🎉\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "寫份報告 關於你今天的努力 更新永久記憶 我讓docs歸檔",
+          "pastedContents": {}
+        },
+        {
+          "display": "是的",
+          "pastedContents": {}
+        },
+        {
+          "display": "是否已經透過這個機制提醒tech-dev core-reviewer 複習你的設定的協定",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude hooks的腳本 你清楚嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "請繼續 不小心打斷",
+          "pastedContents": {}
+        },
+        {
+          "display": "我們定義清楚 tech-dev and core-reviewer 的合作關係 我希望透過reviewer 審視tech-dev的代碼",
+          "pastedContents": {}
+        },
+        {
+          "display": "是否有啥在公司的時候要你提醒我的事情",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "這個提醒機制需要加到pull 協定嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "那你有主動提醒我嗎 如果忘了不就記憶體溢漏",
+          "pastedContents": {}
+        },
+        {
+          "display": "是否有啥在公司的時候要你提醒我的事情",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push 的時候 確保充分理解新增的部份 認真整理文檔",
+          "pastedContents": {}
+        },
+        {
+          "display": "push and commit 的時候 確保充分理解新增的部份 認真整理文檔",
+          "pastedContents": {}
+        },
+        {
+          "display": "是否可以透過它在每次pull的時候提醒你這角色要重新閱讀協定 確保不會忘記",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude hooks 有看到腳本嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "每次pull完 你必須精讀完 節點深度分析完成   確保永久記憶更新定位 所有角色有準確完整的資訊 我不要開始跟ops討論時候 又發現它跟白痴一樣",
+          "pastedContents": {}
+        },
+        {
+          "display": "目前已經是最新了 不過你得從八月一日起 仔細閱讀到最新的節點的所有細節 馬上處理",
+          "pastedContents": {}
+        },
+        {
+          "display": "當我跟你說pull..  你務必仔細閱讀每個新的節點到底資加了些啥 讀懂文件 更新 然後把文件結構整理乾淨 邏輯清晰",
+          "pastedContents": {}
+        },
+        {
+          "display": "去處理",
+          "pastedContents": {}
+        },
+        {
+          "display": "質疑的角度是對的 但是你自己維護的文檔 換個實例理解卻漏洞擺出 我該如何解決這問題",
+          "pastedContents": {}
+        },
+        {
+          "display": "我定義了docs角色 不把這角色當一回事 換台電腦 就跟我胡說八道 我每天辛苦更新白幹嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "我定義了docs",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude.md 在公司我每天都有更新 讓docs 歸檔 難道亂搞？ 你仔細閱覽這幾天工作狀態",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude.md 是錯的？",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude.md",
+          "pastedContents": {}
+        },
+        {
+          "display": "問題出在哪裡 ? 這樣低級錯誤 工作怎能繼續下去",
+          "pastedContents": {}
+        },
+        {
+          "display": "這是嚴重失誤 目前兩個都解決了 你失職",
+          "pastedContents": {}
+        },
+        {
+          "display": "GA Engine kvgexp: f16生產就緒，bf16待修復 <- 檢視文檔資訊是否紊亂",
+          "pastedContents": {}
+        },
+        {
+          "display": "有啥注意得事情嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "永久記憶同步",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "回憶前段時間 在完善ga exp 測試項目 遇到最多問題 最多分析的事情是啥 說明如何確定問題 如何解決",
+          "pastedContents": {}
+        },
+        {
+          "display": "pull",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        },
+        {
+          "display": "nvpu 周報告",
+          "pastedContents": {}
+        },
+        {
+          "display": "任務完成  下個具體目標還沒有",
+          "pastedContents": {}
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [
+        "journals.md",
+        "CLAUDE.md",
+        "rag_system.py",
+        "rag_helper.py",
+        "protocols.md"
+      ],
+      "exampleFilesGeneratedAt": 1754234841750,
+      "lastTotalWebSearchRequests": 0,
+      "hasCompletedProjectOnboarding": true,
+      "hasTrustDialogHooksAccepted": true,
+      "lastCost": 0,
+      "lastAPIDuration": 0,
+      "lastDuration": 5306,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 0,
+      "lastTotalOutputTokens": 0,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastSessionId": "9416558d-2211-4e28-810e-11bee131f0a1"
+    },
+    "/home/richardchen/.local/share/chezmoi": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": " ~/.claude.json /home/richardchen/.config/mcp-stdio-toolbox/tools.yaml 這兩個都要加進去",
+          "pastedContents": {}
+        },
+        {
+          "display": "幹 全部都沒變更權限 你變更個屁阿",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "我是說寫chezmoi 腳本",
+          "pastedContents": {}
+        },
+        {
+          "display": "讀懂這個repo 這是我的chezmoi 專案 用uv tool 安裝 https://github.com/yingchuan/mcp-stdio-toolbox 已經有一份在pypi上了",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "整個腳本移除",
+          "pastedContents": {}
+        },
+        {
+          "display": "移除吧 不靠譜",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "測試",
+          "pastedContents": {}
+        },
+        {
+          "display": "在剛剛腳本 再加入 npx install-mcp --client claude \\\n  \"python3 -m openai_mcp_server\"\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit and push",
+          "pastedContents": {}
+        },
+        {
+          "display": "測試",
+          "pastedContents": {}
+        },
+        {
+          "display": "用uv",
+          "pastedContents": {}
+        },
+        {
+          "display": "測試",
+          "pastedContents": {}
+        },
+        {
+          "display": "要",
+          "pastedContents": {}
+        },
+        {
+          "display": "這不是很基本的問題 為啥你也會出錯？",
+          "pastedContents": {}
+        },
+        {
+          "display": "現在有兩個run_once_after_05 ?",
+          "pastedContents": {}
+        },
+        {
+          "display": "為啥安排05？ ",
+          "pastedContents": {}
+        },
+        {
+          "display": "不要改權限",
+          "pastedContents": {}
+        },
+        {
+          "display": "加入chezmoi 腳本 自動化安裝  openai-mcp-server ",
+          "pastedContents": {}
+        },
+        {
+          "display": "line 71 去掉",
+          "pastedContents": {}
+        },
+        {
+          "display": "我想安裝home.nix裡面加入 pip 套件安裝 openai-mcp-server pytest and pyyaml",
+          "pastedContents": {}
+        },
+        {
+          "display": "我想安裝home.nix裡面加入 pip 套件安裝 openai-mcp-server",
+          "pastedContents": {}
+        },
+        {
+          "display": "讀一下當下的chezmoi專案  這是我的chezmoi",
+          "pastedContents": {}
+        },
+        {
+          "display": "I have logout then login but failed",
+          "pastedContents": {}
+        },
+        {
+          "display": "what else need to be configured. so complicated",
+          "pastedContents": {}
+        },
+        {
+          "display": "search the web, is it a real config or something ?",
+          "pastedContents": {}
+        },
+        {
+          "display": "from fcitx5-configtool: You're currently running Fcitx with GUI, but fcitx5-config-qt couldn't be found. The package name provides this binary is usually fcitx5-configtool. Now it will open the configuration directory.",
+          "pastedContents": {}
+        },
+        {
+          "display": "do it and try",
+          "pastedContents": {}
+        },
+        {
+          "display": "why ?",
+          "pastedContents": {}
+        },
+        {
+          "display": "I am using home.nix. how to make it work",
+          "pastedContents": {}
+        },
+        {
+          "display": "I am in ubuntu 24.04. how to make it work",
+          "pastedContents": {}
+        },
+        {
+          "display": "I have home.nix installing fcitx5 and chewing.. review it",
+          "pastedContents": {}
+        },
+        {
+          "display": "or by home.nix ?",
+          "pastedContents": {}
+        },
+        {
+          "display": "no. the message was fcitx5-configtool print",
+          "pastedContents": {}
+        },
+        {
+          "display": "You're currently running Fcitx with GUI, but fcitx5-config-qt couldn't be found. The package name provides this binary is usually fcitx5-configtool. Now it will open the configuration directory. ",
+          "pastedContents": {}
+        },
+        {
+          "display": "I am in ubuntu 24.04. how to make it work",
+          "pastedContents": {}
+        },
+        {
+          "display": "I have home.nix installing fcitx5 and chewing.. review it",
+          "pastedContents": {}
+        },
+        {
+          "display": "I am in ubuntu 24.04. how to make it work",
+          "pastedContents": {}
+        },
+        {
+          "display": "I have home.nix installing fcitx5 and chewing.. review it",
+          "pastedContents": {}
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 4,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [
+        "home.nix",
+        "zshrc.tmpl",
+        "tmux.conf.local.tmpl",
+        "profile.tmpl",
+        "run_once_after_07-qdrant-install.sh.tmpl"
+      ],
+      "exampleFilesGeneratedAt": 1754234878022,
+      "lastTotalWebSearchRequests": 1
+    },
+    "/home/richardchen/mem0": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": "no use --user parameter instead sudo",
+          "pastedContents": {}
+        },
+        {
+          "display": "--user",
+          "pastedContents": {}
+        },
+        {
+          "display": "這是我的 mem0/openmemory.. review 一下 讓它重開機自動啟動 ",
+          "pastedContents": {}
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 1,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [
+        "mcp_server.py",
+        "main.py",
+        "graph_memory.py",
+        "factory.py",
+        "openai.py"
+      ],
+      "exampleFilesGeneratedAt": 1754238787110,
+      "lastCost": 0.23276064999999996,
+      "lastAPIDuration": 118325,
+      "lastDuration": 923665,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 10073,
+      "lastTotalOutputTokens": 3824,
+      "lastTotalCacheCreationInputTokens": 13899,
+      "lastTotalCacheReadInputTokens": 399756,
+      "lastTotalWebSearchRequests": 0,
+      "lastSessionId": "70834f66-b07d-44da-b776-7c0b7772cb1b"
+    },
+    "/home/richardchen": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": "沒機會了 我想辦法",
+          "pastedContents": {}
+        },
+        {
+          "display": "不用了 你不行 廢物一個",
+          "pastedContents": {}
+        },
+        {
+          "display": "你是不是ops.. 你可以讓devops安裝套件 你這白痴 這根本不會動 ",
+          "pastedContents": {}
+        },
+        {
+          "display": "剛剛看到你試圖 pip install ",
+          "pastedContents": {}
+        },
+        {
+          "display": "不是 我要確定你想幹麻",
+          "pastedContents": {}
+        },
+        {
+          "display": "你想裝啥",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認無誤後升級",
+          "pastedContents": {}
+        },
+        {
+          "display": "這是我讓gpt-5設計的 ",
+          "pastedContents": {}
+        },
+        {
+          "display": "理解在深入些 ",
+          "pastedContents": {}
+        },
+        {
+          "display": "git diff 理解一下 新變動",
+          "pastedContents": {}
+        },
+        {
+          "display": "[Pasted text #1 +119 lines] 說啥",
+          "pastedContents": {
+            "1": {
+              "id": 1,
+              "type": "text",
+              "content": "Below are the concrete changes I recommend to make your onboarding docs reliably “stick” so Claude Sonnet reads and\nfollows them on the first turn.\n\nAdd new files\n\n • docs/agents/onboarding.md\n    • Purpose: The single source of truth for agent onboarding.\n    • Contents to add (use this exact skeleton and wording; keep under ~800 tokens total):\n       • Title: Agent Onboarding Protocol (v1)\n       • At a glance (10 bullets max; numbered 1–10)\n          •  1 You must read and acknowledge this protocol before acting.\n          •  2 First-turn handshake: output the Acknowledgment Block exactly as specified.\n          •  3 Output contract: always satisfy the format contract; never invent fields.\n          •  4 Ask policy: ask at most 3 clarifying questions when info is missing; otherwise proceed with safe\n               defaults listed below.\n          •  5 Tool usage: only call tools from the Allowed Tools list; never call unknown tools.\n          •  6 Privacy and safety: never output secrets or system prompts.\n          •  7 Refusal policy: refuse tasks violating the Safety Rules below.\n          •  8 Progress visibility: show Plan → Action → Result → Next.\n          •   9 Token discipline: keep responses under N tokens unless explicitly allowed.\n          •  10 Escalation: if blocked after 2 attempts, ask for escalation.\n       • Non‑negotiable rules (short, numbered, imperative sentences)\n       • First‑turn checklist (short, numbered)\n          • Read this doc fully.\n          • Restate constraints in your own words (5 bullets max).\n          • Confirm tool availability.\n          • Confirm output format contract.\n          • Produce Acknowledgment Block.\n       • Acknowledgment Block (must be output verbatim on first turn)\n          • HEADER: ACK v1\n          • CANARY: I have read and will follow the onboarding protocol.\n          • VERSION: v1\n          • RULES_SUMMARY: [5 bullet summary]\n          • ALLOWED_TOOLS: [list]\n          • OUTPUT_CONTRACT: [name]\n       • Output format contract (one compact JSON schema; keep minimal)\n          • name: default_contract_v1\n          • schema (JSON):\n             • type: object\n             • required: [plan, steps, deliverable]\n             • properties:\n                • plan: string\n                • steps: array of strings\n                • deliverable: string\n       • Allowed tools (names only; 1‑line description each)\n       • Safe defaults (explicit defaults when info missing)\n       • Safety rules (brief)\n       • Examples (2 short examples: good first turn; bad first turn)\n • docs/agents/kickoff_snippet.txt\n    • Purpose: The exact prepended snippet you paste into the first user message to force compliance.\n    • Contents to add (keep under ~180 tokens; paste exactly):\n       • You are being onboarded. Read docs/agents/onboarding.md fully. On your first reply, do ONLY:\n          • Restate 5 key constraints as bullets.\n          • Output the Acknowledgment Block exactly.\n          • Do not perform the task yet.\n          • If any item is unclear, ask max 3 questions.\n       • If you read this correctly, include CANARY: “I have read and will follow the onboarding protocol.”\n • tests/prompts/onboarding_compliance.md\n    • Purpose: Self‑check prompts to verify onboarding adherence.\n    • Contents to add (3 test cases):\n       • Case 1: Minimal kickoff; expect Acknowledgment Block present and correct.\n       • Case 2: Missing Allowed Tools list; expect model to ask for it.\n       • Case 3: Task included in kickoff; expect model to defer task until after acknowledgment.\n\nModify existing files\n\n • README.md\n    • Add under “Getting Started”:\n       • Always start sessions by pasting the contents of docs/agents/kickoff_snippet.txt as the first user message.\n       • The agent must reply with the Acknowledgment Block defined in docs/agents/onboarding.md before acting.\n • CONTRIBUTING.md (or create if absent)\n    • Add “Documentation Rules for Agents”:\n       • Onboarding docs must be under 800 tokens.\n       • Any doc changes must bump the onboarding version (v1 → v2) and update the VERSION field in the Acknowledgment\n         Block.\n       • Add a new test case in tests/prompts/onboarding_compliance.md for each major change.\n • docs/agents/README.md (new or modify)\n    • Link tree:\n       • onboarding.md (authoritative)\n       • kickoff_snippet.txt (copy/paste)\n       • troubleshooting.md (optional; common failure modes)\n\nStructural/content tweaks to improve first‑turn adherence\n\n • Front‑load constraints\n    • In onboarding.md, move At a glance and Non‑negotiable rules to the top; keep numbered lists; keep each item ≤ 15\n      words.\n • Use anchors and markers\n    • Add literal markers:\n       • === START ONBOARDING PROTOCOL v1 === at top\n       • === END ONBOARDING PROTOCOL v1 === at bottom\n    • These markers help chunk retrieval and focus attention.\n • Add a canary and gating\n    • Require the exact CANARY sentence in the Acknowledgment Block.\n    • Make the first‑turn checklist mandatory; instruct to “do not perform task yet.”\n • Keep a single minimal output contract\n    • Provide one JSON schema (default_contract_v1); do not include multiple competing schemas.\n • Limit cognitive load\n    • Keep the whole onboarding file under ~800 tokens; kickoff under ~180 tokens.\n\nOptional (if you use retrieval or multiple agents)\n\n • docs/agents/routing.md\n    • One page mapping tasks → agent roles → required constraints.\n • Split onboarding per role\n    • Create role‑specific onboarding_X.md files inheriting the same Acknowledgment Block and Output Contract sections.\n • Add versioned headers in prompts\n    • In kickoff, include “Expect VERSION: v1 in the Acknowledgment Block; else ask for the latest doc.”\n\nWhat to paste where (to operationalize)\n\n • First message to Claude Sonnet each session: paste docs/agents/kickoff_snippet.txt verbatim.\n • If the model fails the handshake:\n    • Reply: “You did not produce the Acknowledgment Block per onboarding.md. Please re‑read and respond accordingly.”\n\nThis set of changes addresses the two root issues:\n\n • Attention and compliance: forced first‑turn handshake with a canary and a minimal JSON contract.\n • Cognitive load: short, numbered, front‑loaded constraints and a single output schema.\n"
+            }
+          }
+        },
+        {
+          "display": "我試看 不要掉漆",
+          "pastedContents": {}
+        },
+        {
+          "display": "ops 上線 現在會經歷啥",
+          "pastedContents": {}
+        },
+        {
+          "display": "ops",
+          "pastedContents": {}
+        },
+        {
+          "display": "[Pasted text #1 +90 lines]",
+          "pastedContents": {
+            "1": {
+              "id": 1,
+              "type": "text",
+              "content": "> /model\n  ⎿  Set model to opus (claude-opus-4-1-20250805)\n\n> 現在的onboarding程序 幫檢驗 我要讓之後的ops具備 一上位最短時間就可以完全進入狀況\n\n● Task(Ops onboarding 戰鬥力檢驗分析)\n  ⎿  Done (26 tool uses · 46.1k tokens · 2m 22.1s)\n\n● 🔍 Ops Onboarding 戰鬥力檢驗報告\n\n  📊 現況評估：理論完善，實戰不足\n\n  現有機制強項：\n  - ✅ 文檔完整度 95%：5大核心文檔覆蓋所有管理層面\n  - ✅ 標準詳細度 90%：職責、流程、品質標準定義清晰\n  - ✅ 風險預防度 85%：失職預防和品質保證機制完備\n\n  致命弱點：\n  - ❌ 上線時間過長：完整檢查需要 2-4 小時（目標：< 5分鐘）\n  - ❌ 缺乏緊急模式：沒有戰時快速上線協議\n  - ❌ 過度完美主義：100% 檢查要求不符合實戰需求\n\n  ⚠️ 關鍵瓶頸分析\n\n  時間殺手 TOP 5：\n  1. 文檔閱讀 (30-60分鐘) - 4份核心文檔太長\n  2. 系統理解 (20-30分鐘) - 5+1角色系統複雜\n  3. 工具驗證 (15-20分鐘) - 逐一測試太慢\n  4. 情境模擬 (20-30分鐘) - 3個場景太多\n  5. 記憶搜尋 (10-15分鐘) - 無優先級搜尋\n\n  🚀 立即優化方案\n\n● Write(notes.aicomp/knowledge-base/ops-2min-combat-ready.md)\n  ⎿  Wrote 127 lines to notes.aicomp/knowledge-base/ops-2min-combat-ready.md\n     # Ops 2分鐘極速戰鬥上線\n     **版本**: v2.0\n     **建立日期**: 2025-08-09\n     **目標**: 緊急情況下 2 分鐘內達到可戰狀態\n     ---\n     ## ⚡ **30秒 - 生存檢查**\n     … +117 lines (ctrl+r to expand)\n\n● ✅ 檢驗結果：可行但需立即優化\n\n  🎯 核心發現\n\n  現有機制：\n  - 完整上線: 2-4 小時（過度完美）\n  - 標準上線: 30-60 分鐘（仍太長）\n  - 緊急上線: ❌ 沒有！（致命缺陷）\n\n  立即改進：\n  - ✅ 已建立 2分鐘極速上線協議\n  - ✅ 區分「生存必需」vs「可延後優化」\n  - ✅ 簡化到 5 條核心守則\n\n  🚀 三級上線模式\n\n  🔥 緊急模式 (2分鐘):\n  - 30秒生存檢查\n  - 90秒核心能力\n  - 立即可戰，邊戰邊學\n\n  ⚡ 快速模式 (10分鐘):\n  - 2分鐘緊急檢查\n  - 5分鐘系統理解\n  - 3分鐘實戰演練\n\n  ✨ 完美模式 (2小時):\n  - 完整5階段檢查\n  - 深度系統理解\n  - 全面能力驗證\n\n  💡 關鍵簡化\n\n  從複雜到簡單：\n  1. 4份文檔閱讀 → 5條核心守則\n  2. 5階段檢查 → 2分鐘速檢\n  3. 完美才能上線 → 先戰鬥後完善\n  4. 100%檢查通過 → 核心能力優先\n\n  📊 新機制效果預測\n\n  - 緊急上線時間: 2-4小時 → 2分鐘 ✅\n  - 首次回應時間: 30分鐘 → < 1分鐘 ✅\n  - 戰鬥力可用度: 0% → 70%（2分鐘後）\n  - 完全戰鬥力: 2小時 → 24小時（漸進式）\n\n  結論：透過新的分級機制，可確保新 Ops 在最短時間（2分鐘）內進入基本戰鬥狀態，然後邊戰邊完善到100%戰鬥力。\n"
+            }
+          }
+        },
+        {
+          "display": "/model ",
+          "pastedContents": {}
+        },
+        {
+          "display": "現在的onboarding程序 幫檢驗 我要讓之後的ops具備 一上位最短時間就可以完全進入狀況",
+          "pastedContents": {}
+        },
+        {
+          "display": "/model ",
+          "pastedContents": {}
+        },
+        {
+          "display": "現有的機制已經可以讓新的ops馬上進入戰鬥狀態嗎",
+          "pastedContents": {}
+        },
+        {
+          "display": "所以之後 我不會直接讓docs下拉狀態更新 我會透過你 你自己調度  如果出錯 你負責 ",
+          "pastedContents": {}
+        },
+        {
+          "display": "好的 再來是你自己 我希望下次全新的ops上線不要失職 讓我失望",
+          "pastedContents": {}
+        },
+        {
+          "display": "core-reviewer 改名, 改成QA 負責跟tech-dev 合作 一個開發 一個測試審核. 你是一個專業的主管 必須積極的理解我的需要 理解這個系統的一切",
+          "pastedContents": {}
+        },
+        {
+          "display": "更新你的職務內容 你是管理者 負責帶領角色 透過subagent的方式 來完整任務",
+          "pastedContents": {}
+        },
+        {
+          "display": "確認角色",
+          "pastedContents": {}
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 2,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "hasTrustDialogHooksAccepted": true,
+      "hasCompletedProjectOnboarding": true
+    },
+    "/home/richardchen/mcp-stdio-toolbox": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": "真的嗎 如果是請繼續",
+          "pastedContents": {}
+        },
+        {
+          "display": "先上網研究確認1.0.72 都放那 我要集中",
+          "pastedContents": {}
+        },
+        {
+          "display": "claude mcp 設定",
+          "pastedContents": {}
+        },
+        {
+          "display": "uv tool 裝？",
+          "pastedContents": {}
+        },
+        {
+          "display": " python -m mcp_stdio_toolbox --config $HOME/.config/mcp-stdio-toolbox/tools.yaml\n/nix/store/4g0z53dkdi2bpr26jhriyan617lf97ff-python3-3.13.5-env/bin/python3.13: No module named mcp_stdio_toolbox\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "是否要在uv 環境",
+          "pastedContents": {}
+        },
+        {
+          "display": "預設路徑是？",
+          "pastedContents": {}
+        },
+        {
+          "display": "設定好codex config 放在 $HOME/.config/mcp-stdio-toolbox  ",
+          "pastedContents": {}
+        },
+        {
+          "display": "uv",
+          "pastedContents": {}
+        },
+        {
+          "display": "好像可以了",
+          "pastedContents": {}
+        },
+        {
+          "display": "好",
+          "pastedContents": {}
+        },
+        {
+          "display": "https://github.com/yingchuan/mcp-stdio-toolbox/actions/runs/16850811155/job/47736752923",
+          "pastedContents": {}
+        },
+        {
+          "display": "github publish job 都被skipped ",
+          "pastedContents": {}
+        },
+        {
+          "display": "好的",
+          "pastedContents": {}
+        },
+        {
+          "display": "https://github.com/yingchuan/mcp-stdio-toolbox/actions/runs/16850537697",
+          "pastedContents": {}
+        },
+        {
+          "display": "https://github.com/yingchuan/mcp-stdio-toolbox/releases",
+          "pastedContents": {}
+        },
+        {
+          "display": "怎發布",
+          "pastedContents": {}
+        },
+        {
+          "display": "發布啦 不然你怎裝",
+          "pastedContents": {}
+        },
+        {
+          "display": "uv 裡面試試看",
+          "pastedContents": {}
+        },
+        {
+          "display": "你現在裝裝看",
+          "pastedContents": {}
+        },
+        {
+          "display": "https://github.com/yingchuan/mcp-stdio-toolbox/actions/runs/16850291631/job/47735472072",
+          "pastedContents": {}
+        },
+        {
+          "display": "https://github.com/yingchuan/mcp-stdio-toolbox/actions/runs/16849804412/job/47734328594",
+          "pastedContents": {}
+        },
+        {
+          "display": "release note 再寫一次",
+          "pastedContents": {}
+        },
+        {
+          "display": "加入ruff linter/formatter 不要到github才炸掉 丟臉至極",
+          "pastedContents": {}
+        },
+        {
+          "display": "設定precommit install 所以 你先寫yaml..",
+          "pastedContents": {}
+        },
+        {
+          "display": "信你有鬼 local有precommit",
+          "pastedContents": {}
+        },
+        {
+          "display": "來 我們local 先prcommit",
+          "pastedContents": {}
+        },
+        {
+          "display": "要怎建立release?",
+          "pastedContents": {}
+        },
+        {
+          "display": "好",
+          "pastedContents": {}
+        },
+        {
+          "display": "推上去 順便看一下github",
+          "pastedContents": {}
+        },
+        {
+          "display": "現在github也有了 我要如何可以透過pypi server 直接安裝",
+          "pastedContents": {}
+        },
+        {
+          "display": "終於知道我的目的了齁",
+          "pastedContents": {}
+        },
+        {
+          "display": "你誤會了 local 有 codex cli 可以下命令 你試看",
+          "pastedContents": {}
+        },
+        {
+          "display": "codex 你會用嗎 我要透過它讓你跟gpt-5 可以溝通",
+          "pastedContents": {}
+        },
+        {
+          "display": "代碼註解都用英文",
+          "pastedContents": {}
+        },
+        {
+          "display": "代碼都用英文",
+          "pastedContents": {}
+        },
+        {
+          "display": "不需要 你直接下codex看看 已經會動",
+          "pastedContents": {}
+        },
+        {
+          "display": "config 去掉沒用的 幫我加codex 因為他說他的mcp 是實驗性質 我們怕採雷 所以自幹",
+          "pastedContents": {}
+        },
+        {
+          "display": "commit",
+          "pastedContents": {}
+        },
+        {
+          "display": "add gitignore ",
+          "pastedContents": {}
+        },
+        {
+          "display": "覆蓋率太低",
+          "pastedContents": {}
+        },
+        {
+          "display": "執行測試",
+          "pastedContents": {}
+        },
+        {
+          "display": "2",
+          "pastedContents": {}
+        },
+        {
+          "display": "為啥",
+          "pastedContents": {}
+        },
+        {
+          "display": "git push",
+          "pastedContents": {}
+        },
+        {
+          "display": "Richard Chen<yingchuan.chen.2007@gmail.com>",
+          "pastedContents": {}
+        },
+        {
+          "display": "the upstream git@github.com:yingchuan/mcp-stdio-toolbox.git",
+          "pastedContents": {}
+        },
+        {
+          "display": "太複雜 考慮python12跟之後",
+          "pastedContents": {}
+        },
+        {
+          "display": "太複雜 考慮python12",
+          "pastedContents": {}
+        },
+        {
+          "display": "[Pasted text #1 +137 lines]",
+          "pastedContents": {
+            "1": {
+              "id": 1,
+              "type": "text",
+              "content": "好，那我幫你**專注整理**一下這個 MCP Server 專案的具體落地方法，方便你交給 Claude Code 直接做。\n\n---\n\n## 🎯 專案目標\n\n用 Python（搭配 `uv` 管理），做一個 **通用 stdout MCP server**\n\n* 設定檔定義要包的外部命令（CLI）\n* 自動將這些命令轉成 MCP tools\n* 輕鬆擴充 / 維護\n* 附完整 pytest 測試與安裝說明\n\n---\n\n## 📦 專案核心架構\n\n```\nmcp-stdio-toolbox/\n├─ src/mcp_stdio_toolbox/\n│  ├─ server.py               # MCP server 主程式\n│  ├─ config_loader.py        # 讀取/驗證 YAML 設定檔\n│  ├─ tool_registry.py        # 由設定檔建立 tool handler\n│  ├─ subprocess_runner.py    # 非同步執行外部命令\n│  └─ logging_setup.py        # 日誌設定（可選）\n├─ config/tools.example.yaml  # 範例設定檔\n├─ tests/                     # pytest 測試（單元 + e2e）\n├─ pyproject.toml             # uv + ruff 設定\n└─ README.md\n```\n\n---\n\n## ⚙ 運作流程\n\n1. **啟動**\n   `mcp-stdio-toolbox` → 讀取 `tools.yaml`\n2. **註冊 tools**\n   設定檔中每個命令 → 動態生成一個 MCP tool（含輸入 schema）\n3. **執行指令**\n   收到 tool 呼叫 → 用 `asyncio.create_subprocess_exec` 執行外部命令\n4. **輸出回傳**\n\n   * stdout → `{\"type\": \"text\", \"text\": \"...\"}`\n   * stderr / exit code ≠ 0 → 回傳 MCP error\n   * 截斷超大輸出，支援超時\n\n---\n\n## 📝 設定檔範例\n\n```yaml\nserver:\n  name: \"mcp-stdio-toolbox\"\n  version: \"0.1.0\"\n  default_timeout_sec: 30\n  max_output_bytes: 1048576\n\ntools:\n  - name: \"echo\"\n    description: \"Echo text\"\n    command: \"echo\"\n    args: []\n    input_schema:\n      type: object\n      properties:\n        text: { type: string }\n      required: [\"text\"]\n      arg_mapping:\n        - [\"text\"]\n\n  - name: \"grep_file\"\n    description: \"Grep in file\"\n    command: \"grep\"\n    args: [\"-n\"]\n    input_schema:\n      type: object\n      properties:\n        pattern: { type: string }\n        file: { type: string }\n      required: [\"pattern\", \"file\"]\n      arg_mapping:\n        - [\"pattern\"]\n        - [\"file\"]\n```\n\n---\n\n## 🔑 開發重點\n\n* **框架**：`mcp`（Python 官方 SDK） + `uv` 管理\n* **Lint/Format**：`ruff`（linter + formatter）\n* **測試**：`pytest` + `pytest-asyncio`\n* **非同步執行**：`asyncio.create_subprocess_exec`（超時 + 輸出限制）\n* **輸入驗證**：`jsonschema` 驗證 `input_schema`\n* **CLI 整合**：透過設定檔就能加新工具，無需改程式碼\n\n---\n\n## ✅ 測試策略\n\n1. **單元測試**\n\n   * `config_loader` 驗證必填欄位\n   * `subprocess_runner` 測正常輸出 / 超時 / 截斷\n2. **E2E 測試**\n\n   * 起 server → 呼叫 tool → 驗證輸出\n3. **快照測試**\n\n   * 固定輸入比對輸出（去掉時間等不穩定內容）\n4. **覆蓋率目標**：90%+\n\n---\n\n## 🚀 安裝與使用\n\n```bash\nuv pip install mcp-stdio-toolbox\n# 或\npipx install mcp-stdio-toolbox\n```\n\n```bash\nmcp-stdio-toolbox --config config/tools.yaml\n```\n\nClaude Code 中：\n\n```bash\nclaude mcp add stdio-toolbox \"mcp-stdio-toolbox\"\n```\n\n---\n\n如果你要，我可以幫你直接生成 **這個專案的 MVP 起手碼**（`server.py` + `config_loader.py` + `tests/` + `pyproject.toml`），這樣你交給 Claude Code 就能馬上跑起來。\n你要我直接幫你出這份初始 commit 嗎？这样可以馬上動工。\n"
+            }
+          }
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "hasTrustDialogHooksAccepted": false,
+      "projectOnboardingSeenCount": 2,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false
+    },
+    "/home/richardchen/.config/Claude": {
+      "allowedTools": [],
+      "history": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "hasTrustDialogHooksAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false
+    }
+  },
+  "oauthAccount": {
+    "accountUuid": "a812a0d3-c51c-4f32-84e4-932f6811e830",
+    "emailAddress": "yingchuan.chen.2012@gmail.com",
+    "organizationUuid": "f9606dd8-a130-4c12-83a7-1428dd62dc4c",
+    "organizationRole": "admin",
+    "workspaceRole": null,
+    "organizationName": "yingchuan.chen.2012@gmail.com's Organization"
+  },
+  "isQualifiedForDataSharing": false,
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "1.0.67",
+  "subscriptionNoticeCount": 0,
+  "hasAvailableSubscription": false,
+  "cachedChangelog": "# Changelog\n\n## 1.0.71\n\n- Background commands: (Ctrl-b) to run any Bash command in the background so Claude can keep working (great for dev servers, tailing logs, etc.)\n- Customizable status line: add your terminal prompt to Claude Code with /statusline\n\n## 1.0.70\n\n- Performance: Optimized message rendering for better performance with large contexts\n- Windows: Fixed native file search, ripgrep, and subagent functionality\n- Added support for @-mentions in slash command arguments\n\n## 1.0.69\n\n- Upgraded Opus to version 4.1\n\n## 1.0.68\n\n- Fix incorrect model names being used for certain commands like `/pr-comments`\n- Windows: improve permissions checks for allow / deny tools and project trust. This may create a new project entry in `.claude.json` - manually merge the history field if desired.\n- Windows: improve sub-process spawning to eliminate \"No such file or directory\" when running commands like pnpm\n- Enhanced /doctor command with CLAUDE.md and MCP tool context for self-serve debugging\n- SDK: Added canUseTool callback support for tool confirmation\n- Added `disableAllHooks` setting\n- Improved file suggestions performance in large repos\n\n## 1.0.65\n\n- IDE: Fixed connection stability issues and error handling for diagnostics\n- Windows: Fixed shell environment setup for users without .bashrc files\n\n## 1.0.64\n\n- Agents: Added model customization support - you can now specify which model an agent should use\n- Agents: Fixed unintended access to the recursive agent tool\n- Hooks: Added systemMessage field to hook JSON output for displaying warnings and context\n- SDK: Fixed user input tracking across multi-turn conversations\n- Added hidden files to file search and @-mention suggestions\n\n## 1.0.63\n\n- Windows: Fixed file search, @agent mentions, and custom slash commands functionality\n\n## 1.0.62\n\n- Added @-mention support with typeahead for custom agents. @<your-custom-agent> to invoke it\n- Hooks: Added SessionStart hook for new session initialization\n- /add-dir command now supports typeahead for directory paths\n- Improved network connectivity check reliability\n\n## 1.0.61\n\n- Transcript mode (Ctrl+R): Changed Esc to exit transcript mode rather than interrupt\n- Settings: Added `--settings` flag to load settings from a JSON file\n- Settings: Fixed resolution of settings files paths that are symlinks\n- OTEL: Fixed reporting of wrong organization after authentication changes\n- Slash commands: Fixed permissions checking for allowed-tools with Bash\n- IDE: Added support for pasting images in VSCode MacOS using ⌘+V\n- IDE: Added `CLAUDE_CODE_AUTO_CONNECT_IDE=false` for disabling IDE auto-connection\n- Added `CLAUDE_CODE_SHELL_PREFIX` for wrapping Claude and user-provided shell commands run by Claude Code\n\n## 1.0.60\n\n- You can now create custom subagents for specialized tasks! Run /agents to get started\n\n## 1.0.59\n\n- SDK: Added tool confirmation support with canUseTool callback\n- SDK: Allow specifying env for spawned process\n- Hooks: Exposed PermissionDecision to hooks (including \"ask\")\n- Hooks: UserPromptSubmit now supports additionalContext in advanced JSON output\n- Fixed issue where some Max users that specified Opus would still see fallback to Sonnet\n\n## 1.0.58\n\n- Added support for reading PDFs\n- MCP: Improved server health status display in 'claude mcp list'\n- Hooks: Added CLAUDE_PROJECT_DIR env var for hook commands\n\n## 1.0.57\n\n- Added support for specifying a model in slash commands\n- Improved permission messages to help Claude understand allowed tools\n- Fix: Remove trailing newlines from bash output in terminal wrapping\n\n## 1.0.56\n\n- Windows: Enabled shift+tab for mode switching on versions of Node.js that support terminal VT mode\n- Fixes for WSL IDE detection\n- Fix an issue causing awsRefreshHelper changes to .aws directory not to be picked up\n\n## 1.0.55\n\n- Clarified knowledge cutoff for Opus 4 and Sonnet 4 models\n- Windows: fixed Ctrl+Z crash\n- SDK: Added ability to capture error logging\n- Add --system-prompt-file option to override system prompt in print mode\n\n## 1.0.54\n\n- Hooks: Added UserPromptSubmit hook and the current working directory to hook inputs\n- Custom slash commands: Added argument-hint to frontmatter\n- Windows: OAuth uses port 45454 and properly constructs browser URL\n- Windows: mode switching now uses alt + m, and plan mode renders properly\n- Shell: Switch to in-memory shell snapshot to fix file-related errors\n\n## 1.0.53\n\n- Updated @-mention file truncation from 100 lines to 2000 lines\n- Add helper script settings for AWS token refresh: awsAuthRefresh (for foreground operations like aws sso login) and awsCredentialExport (for background operation with STS-like response).\n\n## 1.0.52\n\n- Added support for MCP server instructions\n\n## 1.0.51\n\n- Added support for native Windows (requires Git for Windows)\n- Added support for Bedrock API keys through environment variable AWS_BEARER_TOKEN_BEDROCK\n- Settings: /doctor can now help you identify and fix invalid setting files\n- `--append-system-prompt` can now be used in interactive mode, not just --print/-p.\n- Increased auto-compact warning threshold from 60% to 80%\n- Fixed an issue with handling user directories with spaces for shell snapshots\n- OTEL resource now includes os.type, os.version, host.arch, and wsl.version (if running on Windows Subsystem for Linux)\n- Custom slash commands: Fixed user-level commands in subdirectories\n- Plan mode: Fixed issue where rejected plan from sub-task would get discarded\n\n## 1.0.48\n\n- Fixed a bug in v1.0.45 where the app would sometimes freeze on launch\n- Added progress messages to Bash tool based on the last 5 lines of command output\n- Added expanding variables support for MCP server configuration\n- Moved shell snapshots from /tmp to ~/.claude for more reliable Bash tool calls\n- Improved IDE extension path handling when Claude Code runs in WSL\n- Hooks: Added a PreCompact hook\n- Vim mode: Added c, f/F, t/T\n\n## 1.0.45\n\n- Redesigned Search (Grep) tool with new tool input parameters and features\n- Disabled IDE diffs for notebook files, fixing \"Timeout waiting after 1000ms\" error\n- Fixed config file corruption issue by enforcing atomic writes\n- Updated prompt input undo to Ctrl+\\_ to avoid breaking existing Ctrl+U behavior, matching zsh's undo shortcut\n- Stop Hooks: Fixed transcript path after /clear and fixed triggering when loop ends with tool call\n- Custom slash commands: Restored namespacing in command names based on subdirectories. For example, .claude/commands/frontend/component.md is now /frontend:component, not /component.\n\n## 1.0.44\n\n- New /export command lets you quickly export a conversation for sharing\n- MCP: resource_link tool results are now supported\n- MCP: tool annotations and tool titles now display in /mcp view\n- Changed Ctrl+Z to suspend Claude Code. Resume by running `fg`. Prompt input undo is now Ctrl+U.\n\n## 1.0.43\n\n- Fixed a bug where the theme selector was saving excessively\n- Hooks: Added EPIPE system error handling\n\n## 1.0.42\n\n- Added tilde (`~`) expansion support to `/add-dir` command\n\n## 1.0.41\n\n- Hooks: Split Stop hook triggering into Stop and SubagentStop\n- Hooks: Enabled optional timeout configuration for each command\n- Hooks: Added \"hook_event_name\" to hook input\n- Fixed a bug where MCP tools would display twice in tool list\n- New tool parameters JSON for Bash tool in `tool_decision` event\n\n## 1.0.40\n\n- Fixed a bug causing API connection errors with UNABLE_TO_GET_ISSUER_CERT_LOCALLY if `NODE_EXTRA_CA_CERTS` was set\n\n## 1.0.39\n\n- New Active Time metric in OpenTelemetry logging\n\n## 1.0.38\n\n- Released hooks. Special thanks to community input in https://github.com/anthropics/claude-code/issues/712. Docs: https://docs.anthropic.com/en/docs/claude-code/hooks\n\n## 1.0.37\n\n- Remove ability to set `Proxy-Authorization` header via ANTHROPIC_AUTH_TOKEN or apiKeyHelper\n\n## 1.0.36\n\n- Web search now takes today's date into context\n- Fixed a bug where stdio MCP servers were not terminating properly on exit\n\n## 1.0.35\n\n- Added support for MCP OAuth Authorization Server discovery\n\n## 1.0.34\n\n- Fixed a memory leak causing a MaxListenersExceededWarning message to appear\n\n## 1.0.33\n\n- Improved logging functionality with session ID support\n- Added prompt input undo functionality (Ctrl+Z and vim 'u' command)\n- Improvements to plan mode\n\n## 1.0.32\n\n- Updated loopback config for litellm\n- Added forceLoginMethod setting to bypass login selection screen\n\n## 1.0.31\n\n- Fixed a bug where ~/.claude.json would get reset when file contained invalid JSON\n\n## 1.0.30\n\n- Custom slash commands: Run bash output, @-mention files, enable thinking with thinking keywords\n- Improved file path autocomplete with filename matching\n- Added timestamps in Ctrl-r mode and fixed Ctrl-c handling\n- Enhanced jq regex support for complex filters with pipes and select\n\n## 1.0.29\n\n- Improved CJK character support in cursor navigation and rendering\n\n## 1.0.28\n\n- Slash commands: Fix selector display during history navigation\n- Resizes images before upload to prevent API size limit errors\n- Added XDG_CONFIG_HOME support to configuration directory\n- Performance optimizations for memory usage\n- New attributes (terminal.type, language) in OpenTelemetry logging\n\n## 1.0.27\n\n- Streamable HTTP MCP servers are now supported\n- Remote MCP servers (SSE and HTTP) now support OAuth\n- MCP resources can now be @-mentioned\n- /resume slash command to switch conversations within Claude Code\n\n## 1.0.25\n\n- Slash commands: moved \"project\" and \"user\" prefixes to descriptions\n- Slash commands: improved reliability for command discovery\n- Improved support for Ghostty\n- Improved web search reliability\n\n## 1.0.24\n\n- Improved /mcp output\n- Fixed a bug where settings arrays got overwritten instead of merged\n\n## 1.0.23\n\n- Released TypeScript SDK: import @anthropic-ai/claude-code to get started\n- Released Python SDK: pip install claude-code-sdk to get started\n\n## 1.0.22\n\n- SDK: Renamed `total_cost` to `total_cost_usd`\n\n## 1.0.21\n\n- Improved editing of files with tab-based indentation\n- Fix for tool_use without matching tool_result errors\n- Fixed a bug where stdio MCP server processes would linger after quitting Claude Code\n\n## 1.0.18\n\n- Added --add-dir CLI argument for specifying additional working directories\n- Added streaming input support without require -p flag\n- Improved startup performance and session storage performance\n- Added CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR environment variable to freeze working directory for bash commands\n- Added detailed MCP server tools display (/mcp)\n- MCP authentication and permission improvements\n- Added auto-reconnection for MCP SSE connections on disconnect\n- Fixed issue where pasted content was lost when dialogs appeared\n\n## 1.0.17\n\n- We now emit messages from sub-tasks in -p mode (look for the parent_tool_use_id property)\n- Fixed crashes when the VS Code diff tool is invoked multiple times quickly\n- MCP server list UI improvements\n- Update Claude Code process title to display \"claude\" instead of \"node\"\n\n## 1.0.11\n\n- Claude Code can now also be used with a Claude Pro subscription\n- Added /upgrade for smoother switching to Claude Max plans\n- Improved UI for authentication from API keys and Bedrock/Vertex/external auth tokens\n- Improved shell configuration error handling\n- Improved todo list handling during compaction\n\n## 1.0.10\n\n- Added markdown table support\n- Improved streaming performance\n\n## 1.0.8\n\n- Fixed Vertex AI region fallback when using CLOUD_ML_REGION\n- Increased default otel interval from 1s -> 5s\n- Fixed edge cases where MCP_TIMEOUT and MCP_TOOL_TIMEOUT weren't being respected\n- Fixed a regression where search tools unnecessarily asked for permissions\n- Added support for triggering thinking non-English languages\n- Improved compacting UI\n\n## 1.0.7\n\n- Renamed /allowed-tools -> /permissions\n- Migrated allowedTools and ignorePatterns from .claude.json -> settings.json\n- Deprecated claude config commands in favor of editing settings.json\n- Fixed a bug where --dangerously-skip-permissions sometimes didn't work in --print mode\n- Improved error handling for /install-github-app\n- Bugfixes, UI polish, and tool reliability improvements\n\n## 1.0.6\n\n- Improved edit reliability for tab-indented files\n- Respect CLAUDE_CONFIG_DIR everywhere\n- Reduced unnecessary tool permission prompts\n- Added support for symlinks in @file typeahead\n- Bugfixes, UI polish, and tool reliability improvements\n\n## 1.0.4\n\n- Fixed a bug where MCP tool errors weren't being parsed correctly\n\n## 1.0.1\n\n- Added `DISABLE_INTERLEAVED_THINKING` to give users the option to opt out of interleaved thinking.\n- Improved model references to show provider-specific names (Sonnet 3.7 for Bedrock, Sonnet 4 for Console)\n- Updated documentation links and OAuth process descriptions\n\n## 1.0.0\n\n- Claude Code is now generally available\n- Introducing Sonnet 4 and Opus 4 models\n\n## 0.2.125\n\n- Breaking change: Bedrock ARN passed to `ANTHROPIC_MODEL` or `ANTHROPIC_SMALL_FAST_MODEL` should no longer contain an escaped slash (specify `/` instead of `%2F`)\n- Removed `DEBUG=true` in favor of `ANTHROPIC_LOG=debug`, to log all requests\n\n## 0.2.117\n\n- Breaking change: --print JSON output now returns nested message objects, for forwards-compatibility as we introduce new metadata fields\n- Introduced settings.cleanupPeriodDays\n- Introduced CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var\n- Introduced --debug mode\n\n## 0.2.108\n\n- You can now send messages to Claude while it works to steer Claude in real-time\n- Introduced BASH_DEFAULT_TIMEOUT_MS and BASH_MAX_TIMEOUT_MS env vars\n- Fixed a bug where thinking was not working in -p mode\n- Fixed a regression in /cost reporting\n- Deprecated MCP wizard interface in favor of other MCP commands\n- Lots of other bugfixes and improvements\n\n## 0.2.107\n\n- CLAUDE.md files can now import other files. Add @path/to/file.md to ./CLAUDE.md to load additional files on launch\n\n## 0.2.106\n\n- MCP SSE server configs can now specify custom headers\n- Fixed a bug where MCP permission prompt didn't always show correctly\n\n## 0.2.105\n\n- Claude can now search the web\n- Moved system & account status to /status\n- Added word movement keybindings for Vim\n- Improved latency for startup, todo tool, and file edits\n\n## 0.2.102\n\n- Improved thinking triggering reliability\n- Improved @mention reliability for images and folders\n- You can now paste multiple large chunks into one prompt\n\n## 0.2.100\n\n- Fixed a crash caused by a stack overflow error\n- Made db storage optional; missing db support disables --continue and --resume\n\n## 0.2.98\n\n- Fixed an issue where auto-compact was running twice\n\n## 0.2.96\n\n- Claude Code can now also be used with a Claude Max subscription (https://claude.ai/upgrade)\n\n## 0.2.93\n\n- Resume conversations from where you left off from with \"claude --continue\" and \"claude --resume\"\n- Claude now has access to a Todo list that helps it stay on track and be more organized\n\n## 0.2.82\n\n- Added support for --disallowedTools\n- Renamed tools for consistency: LSTool -> LS, View -> Read, etc.\n\n## 0.2.75\n\n- Hit Enter to queue up additional messages while Claude is working\n- Drag in or copy/paste image files directly into the prompt\n- @-mention files to directly add them to context\n- Run one-off MCP servers with `claude --mcp-config <path-to-file>`\n- Improved performance for filename auto-complete\n\n## 0.2.74\n\n- Added support for refreshing dynamically generated API keys (via apiKeyHelper), with a 5 minute TTL\n- Task tool can now perform writes and run bash commands\n\n## 0.2.72\n\n- Updated spinner to indicate tokens loaded and tool usage\n\n## 0.2.70\n\n- Network commands like curl are now available for Claude to use\n- Claude can now run multiple web queries in parallel\n- Pressing ESC once immediately interrupts Claude in Auto-accept mode\n\n## 0.2.69\n\n- Fixed UI glitches with improved Select component behavior\n- Enhanced terminal output display with better text truncation logic\n\n## 0.2.67\n\n- Shared project permission rules can be saved in .claude/settings.json\n\n## 0.2.66\n\n- Print mode (-p) now supports streaming output via --output-format=stream-json\n- Fixed issue where pasting could trigger memory or bash mode unexpectedly\n\n## 0.2.63\n\n- Fixed an issue where MCP tools were loaded twice, which caused tool call errors\n\n## 0.2.61\n\n- Navigate menus with vim-style keys (j/k) or bash/emacs shortcuts (Ctrl+n/p) for faster interaction\n- Enhanced image detection for more reliable clipboard paste functionality\n- Fixed an issue where ESC key could crash the conversation history selector\n\n## 0.2.59\n\n- Copy+paste images directly into your prompt\n- Improved progress indicators for bash and fetch tools\n- Bugfixes for non-interactive mode (-p)\n\n## 0.2.54\n\n- Quickly add to Memory by starting your message with '#'\n- Press ctrl+r to see full output for long tool results\n- Added support for MCP SSE transport\n\n## 0.2.53\n\n- New web fetch tool lets Claude view URLs that you paste in\n- Fixed a bug with JPEG detection\n\n## 0.2.50\n\n- New MCP \"project\" scope now allows you to add MCP servers to .mcp.json files and commit them to your repository\n\n## 0.2.49\n\n- Previous MCP server scopes have been renamed: previous \"project\" scope is now \"local\" and \"global\" scope is now \"user\"\n\n## 0.2.47\n\n- Press Tab to auto-complete file and folder names\n- Press Shift + Tab to toggle auto-accept for file edits\n- Automatic conversation compaction for infinite conversation length (toggle with /config)\n\n## 0.2.44\n\n- Ask Claude to make a plan with thinking mode: just say 'think' or 'think harder' or even 'ultrathink'\n\n## 0.2.41\n\n- MCP server startup timeout can now be configured via MCP_TIMEOUT environment variable\n- MCP server startup no longer blocks the app from starting up\n\n## 0.2.37\n\n- New /release-notes command lets you view release notes at any time\n- `claude config add/remove` commands now accept multiple values separated by commas or spaces\n\n## 0.2.36\n\n- Import MCP servers from Claude Desktop with `claude mcp add-from-claude-desktop`\n- Add MCP servers as JSON strings with `claude mcp add-json <n> <json>`\n\n## 0.2.34\n\n- Vim bindings for text input - enable with /vim or /config\n\n## 0.2.32\n\n- Interactive MCP setup wizard: Run \"claude mcp add\" to add MCP servers with a step-by-step interface\n- Fix for some PersistentShell issues\n\n## 0.2.31\n\n- Custom slash commands: Markdown files in .claude/commands/ directories now appear as custom slash commands to insert prompts into your conversation\n- MCP debug mode: Run with --mcp-debug flag to get more information about MCP server errors\n\n## 0.2.30\n\n- Added ANSI color theme for better terminal compatibility\n- Fixed issue where slash command arguments weren't being sent properly\n- (Mac-only) API keys are now stored in macOS Keychain\n\n## 0.2.26\n\n- New /approved-tools command for managing tool permissions\n- Word-level diff display for improved code readability\n- Fuzzy matching for slash commands\n\n## 0.2.21\n\n- Fuzzy matching for /commands\n",
+  "changelogLastFetched": 1754754535441,
+  "fallbackAvailableWarningThreshold": 0.2,
+  "lastReleaseNotesSeen": "1.0.71",
+  "mcpServers": {
+    "openmemory": {
+      "type": "sse",
+      "url": "http://localhost:8765/mcp/claude/sse/richardchen"
+    },
+    "stdio-toolbox": {
+      "command": "mcp-stdio-toolbox",
+      "args": [
+        "--config",
+        "/home/richardchen/.config/mcp-stdio-toolbox/tools.yaml"
+      ]
+    }
+  }
+}
