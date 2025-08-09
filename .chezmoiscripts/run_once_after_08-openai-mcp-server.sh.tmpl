@@ -17,4 +17,8 @@ fi
 echo "📦 Installing openai-mcp-server..."
 uv tool install openai-mcp-server
 
-echo "✅ openai-mcp-server installation completed!"
+# Configure MCP server for Claude
+echo "🔧 Configuring MCP server for Claude..."
+npx install-mcp --client claude --yes "python3 -m openai_mcp_server"
+
+echo "✅ openai-mcp-server installation and configuration completed!"
