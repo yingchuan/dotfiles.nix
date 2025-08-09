@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Install openai-mcp-server via uv
+# This script runs once after the initial chezmoi apply
+
+set -euo pipefail
+
+echo "🔧 Installing openai-mcp-server via uv..."
+
+# Check if uv is available
+if ! command -v uv &> /dev/null; then
+    echo "❌ uv not found. Make sure uv is installed."
+    exit 1
+fi
+
+# Install openai-mcp-server globally with uv
+echo "📦 Installing openai-mcp-server..."
+uv tool install openai-mcp-server
+
+echo "✅ openai-mcp-server installation completed!"
