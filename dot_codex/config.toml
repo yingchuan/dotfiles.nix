@@ -1,0 +1,5 @@
+projects = { "/home/richardchen/mcp-stdio-toolbox" = { trust_level = "trusted" } , "/home/richardchen/.local/share/chezmoi/.chezmoiscripts" = { trust_level = "trusted" } }
+
+[mcp_servers.openmemory]
+command = "mcp-proxy"
+args = ["http://localhost:8765/mcp/codex/sse/richardchen"]
