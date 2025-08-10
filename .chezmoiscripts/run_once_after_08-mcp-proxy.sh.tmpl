@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Installs mcp-proxy via uv tool
+
+set -euo pipefail
+
+# Skip during Docker builds / CI
+if [[ -n "${DOCKER_BUILD_STAGE:-}" || -n "${CI:-}" ]]; then
+  echo "🐳 Skipping mcp-proxy installation during Docker build"
+  echo "  Manual install later with:"
+  echo "  uv tool install mcp-proxy"
+  exit 0
+fi
+
+# Check if uv is available
+if ! command -v uv &> /dev/null; then
+  echo "❌ Error: 'uv' is required but not found in PATH"
+  echo "   Please install uv first or run 'home-manager switch'"
+  exit 1
+fi
+
+# Check if mcp-proxy is already installed
+if command -v mcp-proxy &> /dev/null; then
+  echo "✅ mcp-proxy is already installed"
+  mcp-proxy --version
+  exit 0
+fi
+
+echo "🔧 Installing mcp-proxy..."
+
+# Install mcp-proxy into uv's global toolchain
+uv tool install \
+  mcp-proxy
+
+echo "✅ mcp-proxy installed successfully"
+echo "💡 Usage: Use mcp-proxy to run MCP servers with various transport methods"

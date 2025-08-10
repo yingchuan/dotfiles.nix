@@ -1083,13 +1083,6 @@
     "openmemory": {
       "type": "sse",
       "url": "http://localhost:8765/mcp/claude/sse/richardchen"
-    },
-    "stdio-toolbox": {
-      "command": "mcp-stdio-toolbox",
-      "args": [
-        "--config",
-        "/home/richardchen/.config/mcp-stdio-toolbox/tools.yaml"
-      ]
     }
   }
 }
