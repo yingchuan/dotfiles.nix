@@ -1,16 +1,35 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_DIR="$HOME/.oh-my-tmux"
+# Option A: always follow upstream; do not keep local changes
+# Sync ~/.tmux/.oh-my-tmux to upstream default branch (master/main) from gpakosz/.tmux
 
-# clone or update oh-my-tmux
-if [ ! -d "$REPO_DIR" ]; then
-  echo "Cloning oh-my-tmux..."
-  git clone --depth 1 https://github.com/gpakosz/.tmux.git "$REPO_DIR"
+DIR="$HOME/.tmux/.oh-my-tmux"
+REPO_URL="https://github.com/gpakosz/.tmux.git"
+
+msg() { printf '[ohmytmux] %s\n' "$*"; }
+
+if [ ! -d "$DIR/.git" ]; then
+  mkdir -p "$(dirname "$DIR")"
+  msg "Cloning $REPO_URL to $DIR"
+  git clone --depth 1 "$REPO_URL" "$DIR"
 else
-  echo "Updating oh-my-tmux..."
-  git -C "$REPO_DIR" pull --ff-only
+  msg "Updating existing repo at $DIR"
+  git -C "$DIR" fetch origin --prune
+  # Determine upstream (prefer current branch; fallback to origin/HEAD)
+  BR=$(git -C "$DIR" symbolic-ref --short HEAD 2>/dev/null || echo master)
+  if git -C "$DIR" show-ref --verify --quiet "refs/remotes/origin/$BR"; then
+    UP="origin/$BR"
+  else
+    UP=$(git -C "$DIR" rev-parse --abbrev-ref --symbolic-full-name origin/HEAD 2>/dev/null || echo origin/master)
+  fi
+  msg "Resetting to $UP"
+  git -C "$DIR" reset --hard "$UP"
 fi
 
-# link main config
-ln -sf "$REPO_DIR/.tmux.conf" "$HOME/.tmux.conf"
+# Optional: init/update submodules if present
+if [ -f "$DIR/.gitmodules" ]; then
+  git -C "$DIR" submodule update --init --recursive
+fi
+
+msg "Done"
