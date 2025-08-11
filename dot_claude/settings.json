@@ -5,10 +5,7 @@
       {
         "matcher": "startup",
         "hooks": [
-          {
-            "type": "command", 
-            "command": "[ -f ~/notes.aicomp/config/mandatory_onboard.py ] && python ~/notes.aicomp/config/mandatory_onboard.py || echo 'Onboard script not found, skipping...'"
-          }
+          { "type": "command", "command": "bash scripts/claude-session-start.sh" }
         ]
       }
     ],
@@ -16,12 +13,18 @@
       {
         "matcher": "*",
         "hooks": [
-          {
-            "type": "command",
-            "command": "[ -f ~/notes.aicomp/config/claude_environment_check.py ] && python ~/notes.aicomp/config/claude_environment_check.py || true"
-          }
+          { "type": "command", "command": "bash scripts/claude-pretool-guard.sh" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": "bash scripts/claude-posttool-log.sh" }
         ]
       }
     ]
   }
 }
+
