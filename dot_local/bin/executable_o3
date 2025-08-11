@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# o3 PATH-stable wrapper managed by chezmoi
+# Tries common install locations, executes the first one found.
+for c in "$HOME/.nix-profile/bin/o3" \
+         "/usr/local/bin/o3" \
+         "$HOME/.claude/local/o3"; do
+  if [ -x "$c" ]; then exec "$c" "$@"; fi
+done
+echo "o3 not found in known locations: $HOME/.nix-profile/bin/o3, /usr/local/bin/o3, $HOME/.claude/local/o3" >&2
+exit 127
