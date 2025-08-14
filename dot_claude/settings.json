@@ -5,7 +5,10 @@
       {
         "matcher": "startup",
         "hooks": [
-          { "type": "command", "command": "bash scripts/claude-session-start.sh" }
+          {
+            "type": "command",
+            "command": "bash /home/richardchen/notes.aicomp/scripts/claude-session-start.sh"
+          }
         ]
       }
     ],
@@ -13,7 +16,10 @@
       {
         "matcher": "*",
         "hooks": [
-          { "type": "command", "command": "bash scripts/claude-pretool-guard.sh" }
+          {
+            "type": "command",
+            "command": "bash /home/richardchen/notes.aicomp/scripts/claude-pretool-guard.sh"
+          }
         ]
       }
     ],
@@ -21,10 +27,12 @@
       {
         "matcher": "*",
         "hooks": [
-          { "type": "command", "command": "bash scripts/claude-posttool-log.sh" }
+          {
+            "type": "command",
+            "command": "bash /home/richardchen/notes.aicomp/scripts/claude-posttool-log.sh"
+          }
         ]
       }
     ]
   }
 }
-
