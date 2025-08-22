@@ -80,6 +80,7 @@ in
     uv                  # Rust-based Python package manager
     ruff                # Python linter / formatter
     pre-commit          # hook runner
+    shfmt               # Shell script formatter
 
     # ── clipboard helpers for Neovim ─────────────────────────────
     wl-clipboard  # Wayland clipboard (wl-copy / wl-paste)
