@@ -110,8 +110,13 @@ in
     tectonic     # Modern LaTeX engine
     typst        # Typst typesetting system
     texliveSmall # provides pdflatex, detex, and basic TeX tools
+    pandoc       # universal markup converter
+    mdbook       # GitBook-like documentation generator
+    mdbook-mermaid # Preprocessor for mdbook to add mermaid.js support
+    mermaid-filter # Pandoc filter for creating diagrams in mermaid syntax blocks
 
     # ── diagram generation ──────────────────────────────────────
+    mermaid-cli  # CLI for generating diagrams from mermaid markup
 
 
     # ── database tools ──────────────────────────────────────────
