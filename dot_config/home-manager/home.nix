@@ -122,6 +122,9 @@ in
     # ── database tools ──────────────────────────────────────────
     sqlite              # shared library libsqlite3.so (needed by Snacks)
     sqlite-interactive  # sqlite3 CLI shell
+    
+    # ── virtualization ──────────────────────────────────────────
+    qemu                # QEMU system & user emulation + utils
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
