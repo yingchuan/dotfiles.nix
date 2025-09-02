@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# Universal Python package installer via uv - supports both tools and libraries
+# Usage: Configure packages in the script variables below
+
+set -euo pipefail
+
+# ── Configuration ──────────────────────────────────────────────────────────
+# Define packages to install as tools (global CLI commands)
+TOOLS=()
+
+# Define packages to install as libraries (for development) 
+LIBS=()
+
+# NOTE: This script uses 'run_onchange_' - it will re-run whenever you modify
+# the TOOLS or LIBS arrays above, ensuring your Python packages stay in sync
+
+# Python version to use
+PYTHON_VERSION="python3.12"
+
+# Skip installation during Docker build to avoid disk space issues
+if [ -f /.dockerenv ] || [ -n "${DOCKER_BUILD:-}" ]; then
+  echo "🐳 Skipping Python package installation during Docker build"
+  echo "💡 Tools can be installed later with: uv tool install <package>"
+  echo "💡 Libraries can be installed later with: uv add <package>"
+  exit 0
+fi
+
+# ── Ensure ~/.local/bin is in PATH (for uv-installed tools) ───────────────
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# ── Load Nix environment; ensure ~/.nix-profile/bin is in PATH ──────────────
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
+# Safety check: uv must already be on the PATH
+command -v uv >/dev/null || { echo "❌ uv is not installed"; exit 1; }
+
+# ── Install Tools (Global CLI Commands) ───────────────────────────────────
+if [ ${#TOOLS[@]} -gt 0 ]; then
+  echo "🔧 Installing tools..."
+  for tool in "${TOOLS[@]}"; do
+    echo "  Installing tool: $tool"
+    uv tool install \
+      --force \
+      --python "$PYTHON_VERSION" \
+      --with pip \
+      "$tool"
+  done
+else
+  echo "ℹ️  No tools configured for installation"
+fi
+
+# ── Install Libraries (Development Dependencies) ──────────────────────────
+if [ ${#LIBS[@]} -gt 0 ]; then
+  echo "📚 Installing libraries..."
+  # Create a temporary project for library installation
+  TEMP_PROJECT=$(mktemp -d)
+  cd "$TEMP_PROJECT"
+  
+  uv init --python "$PYTHON_VERSION" temp-project
+  cd temp-project
+  
+  for lib in "${LIBS[@]}"; do
+    echo "  Adding library: $lib"
+    uv add "$lib"
+  done
+  
+  # Sync to ensure all dependencies are installed
+  uv sync
+  
+  # Clean up
+  cd /
+  rm -rf "$TEMP_PROJECT"
+else
+  echo "ℹ️  No libraries configured for installation"
+fi
+
+echo "✅ Python package installation completed"
