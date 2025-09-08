@@ -81,6 +81,7 @@ in
     ruff                # Python linter / formatter
     pre-commit          # hook runner
     shfmt               # Shell script formatter
+    protobuf            # Protocol Buffers compiler and libraries
 
     # ── clipboard helpers for Neovim ─────────────────────────────
     wl-clipboard  # Wayland clipboard (wl-copy / wl-paste)
