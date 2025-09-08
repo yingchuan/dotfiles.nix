@@ -13,5 +13,8 @@ fi
 export npm_config_prefix="$HOME/.local"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Add Go bin to PATH
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # Claude Code default model
 export ANTHROPIC_MODEL="claude-sonnet-4-20250514"
