@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# Installs Google Cloud CLI with Python and Go components
+# Chezmoiscripts "run_once_after_*" => executed only the first time.
+
+set -euo pipefail
+
+# Skip everything if gcloud is already present
+if command -v gcloud >/dev/null 2>&1; then
+  echo "Google Cloud CLI already installed – skipping."
+  exit 0
+fi
+
+echo "Installing Google Cloud CLI..."
+
+# Install prerequisites
+echo "Installing prerequisites..."
+sudo apt-get update -y
+sudo apt-get install -y apt-transport-https ca-certificates gnupg curl
+
+# Add Google Cloud GPG key
+echo "Adding Google Cloud GPG key..."
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+  | sudo gpg --dearmor -o /etc/apt/keyrings/cloud.google.gpg
+
+# Add Google Cloud repository
+echo "Adding Google Cloud repository..."
+echo "deb [signed-by=/etc/apt/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" \
+  | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# Update package list
+echo "Updating package list..."
+sudo apt-get update -y
+
+# Install Google Cloud CLI with additional components
+echo "Installing Google Cloud CLI with Python and Go support..."
+sudo apt-get install -y \
+  google-cloud-cli \
+  google-cloud-cli-app-engine-python \
+  google-cloud-cli-app-engine-python-extras \
+  google-cloud-cli-app-engine-go \
+  google-cloud-cli-cloud-build-local \
+  google-cloud-cli-datastore-emulator \
+  google-cloud-cli-firestore-emulator \
+  google-cloud-cli-pubsub-emulator
+
+# Install additional Python components if available
+echo "Installing additional Python/Go components..."
+sudo apt-get install -y \
+  google-cloud-cli-cloud-run-proxy \
+  google-cloud-cli-config-connector \
+  google-cloud-cli-gke-gcloud-auth-plugin || true
+
+# Verify installation
+echo "Verifying installation..."
+if command -v gcloud >/dev/null 2>&1; then
+  echo "✓ Google Cloud CLI installed successfully"
+  gcloud version
+  echo ""
+  echo "🔧 Next steps:"
+  echo "   1. Run: gcloud init"
+  echo "   2. Run: gcloud auth login"
+  echo "   3. For Python App Engine: gcloud components install app-engine-python"
+  echo "   4. For Go App Engine: gcloud components install app-engine-go"
+else
+  echo "❌ Installation failed"
+  exit 1
+fi
+
+echo "✓ Google Cloud CLI installation completed."
