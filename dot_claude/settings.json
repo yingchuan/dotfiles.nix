@@ -1,9 +1,4 @@
 {
-  "model": "opusplan",
-  "statusLine": {
-    "type": "command",
-    "command": "bash /home/richardchen/.claude/statusline.sh"
-  },
   "hooks": {
     "SessionStart": [
       {
@@ -38,5 +33,10 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/richardchen/.claude/statusline.sh"
+  },
+  "alwaysThinkingEnabled": true
 }
