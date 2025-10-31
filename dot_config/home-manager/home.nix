@@ -27,9 +27,6 @@ in
   # environment.
   home.packages = with pkgs; [
     neovim
-    fcitx5
-    fcitx5-chinese-addons
-    fcitx5-chewing
     tree-sitter              # CLI needed by nvim-treesitter to compile parsers
     tree-sitter-grammars.tree-sitter-llvm  # LLVM grammar for tree-sitter
     fzf                      # fuzzy-finder backend for OMZ + Telescope
@@ -177,10 +174,6 @@ in
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-    GTK_IM_MODULE = "fcitx5";
-    QT_IM_MODULE  = "fcitx5";
-    XMODIFIERS    = "@im=fcitx5";
-    INPUT_METHOD  = "fcitx5";
   };
 
   # Expose binaries installed by the Chezmoiscript's npm prefix ($HOME/.local)
@@ -206,14 +199,4 @@ in
     # extraFlags = [ "--agents" "ssh" ];
   };
 
-  systemd.user.services.fcitx5 = {
-    Unit = { Description = "Fcitx5 input-method daemon"; };
-    Service = {
-      ExecStart = "${pkgs.fcitx5}/bin/fcitx5 -d";
-      Restart   = "on-failure";
-    };
-    Install = { WantedBy = [ "default.target" ]; };
-  };
-
-  # ── Input-method ─────────────────────────────────────────────
 }
